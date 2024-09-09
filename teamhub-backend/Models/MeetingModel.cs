@@ -12,6 +12,8 @@ namespace teamhub_backend.Models;
 
 
         public string? Summary { get; set; } // user will add at end of meeting
+
+        public string? AISummary { get; set; }
     
         public List<Post>? Post { get; set; }
     }

@@ -1,7 +1,7 @@
 namespace teamhub_backend.Models;
 public class Post
 {
-    public int Id { get; set; } //my primary key
+    public int Id { get; set; } 
 
     public required string PersonName { get; set; }
 
