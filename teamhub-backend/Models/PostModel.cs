@@ -1,4 +1,4 @@
-namespace teamhub_backend.Models;
+namespace teamhub_backend;
 public class Post
 {
     public int Id { get; set; } 
@@ -13,5 +13,4 @@ public class Post
 
     public int MeetingId { get; set; } //my foreign key
 
-    public required Meeting Meeting { get; set; }
 }
