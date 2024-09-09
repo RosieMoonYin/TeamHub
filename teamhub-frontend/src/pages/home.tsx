@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import TimeLine from "../components/timeLine";
 import Navbar from "../components/navbar";
+import ContributeCard from "../components/Cards/contributeCard";
 
 export default function Home() {
   return (
@@ -19,6 +20,11 @@ export default function Home() {
         <button className="btn m-2">Archive</button>
       </Link>
 
+      <section className="flex justify-center">
+        <ContributeCard />
+        <ContributeCard />
+        <ContributeCard />
+      </section>
       <TimeLine />
     </>
   );
