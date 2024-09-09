@@ -1,14 +1,17 @@
-public class Meeeting
-{
-    public int Id { get; set; }
+namespace teamhub_backend.Models;
 
-    public required string MeetingName { get; set; }
+    public class Meeting
+    {
+        public int Id { get; set; }
 
-    public string? Description { get; set; }
+        public required string MeetingName { get; set; }
 
-    public string? Summary { get; set; }
+        public string? Description { get; set; }
 
-    public required DateTime MeetingDate { get; set; }
+        public required DateTime MeetingDate { get; set; }
 
-    public List<Posts> Post { get; set; }
-}
+
+        public string? Summary { get; set; } // user will add at end of meeting
+    
+        public List<Post>? Post { get; set; }
+    }
