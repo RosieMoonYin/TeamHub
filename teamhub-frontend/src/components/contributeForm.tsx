@@ -3,7 +3,7 @@ import PostsChat from "./postsChat";
 export default function ContributeForm() {
   return (
     <>
-      <div className="flex bg-gray-200 p-20">
+      <div className="flex bg-green-400 w-full p-20">
         <section className="flex flex-col align-middle justify-center w-1/2 bg-slate-50 p-10 m-5">
           <input
             type="text"

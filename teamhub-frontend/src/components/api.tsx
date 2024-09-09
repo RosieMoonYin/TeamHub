@@ -32,3 +32,25 @@ export const fetchPosts = async (): Promise<Post[]> => {
   }
   return response.json();
 };
+
+export const createPost = async (postData: {
+  personName: string;
+  textInput: string;
+  postType: string;
+  status: string;
+  meetingId: number;
+}) => {
+  const response = await fetch("/api/posts", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(postData),
+  });
+
+  if (!response.ok) {
+    throw new Error("Failed to create post");
+  }
+
+  return response.json();
+};
