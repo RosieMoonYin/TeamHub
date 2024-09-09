@@ -2,19 +2,19 @@ export interface Meeting {
   id: number;
   meetingName: string;
   description?: string;
-  meetingDate: string; // Date is often serialized as a string in JSON
+  meetingDate: string;
   summary?: string;
   aiSummary?: string;
-  posts?: Post[]; // If you need to handle posts, include this
+  posts?: Post[];
 }
 
 export interface Post {
   id: number;
   personName: string;
   textInput: string;
-  postType?: string; // Optional, defaults to "General"
-  status?: string; // Optional, defaults to "Open"
-  meetingId: number; // Foreign key
+  postType?: string;
+  status?: string;
+  meetingId: number;
 }
 
 export const fetchMeetings = async (): Promise<Meeting[]> => {
