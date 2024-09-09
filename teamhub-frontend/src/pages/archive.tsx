@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import Navbar from "../components/navbar";
+import Footer from "../components/footer";
 
 export default function Archive() {
   return (
@@ -10,6 +11,8 @@ export default function Archive() {
       <Link to="/">
         <button className="btn">Home</button>
       </Link>
+
+      <Footer />
     </>
   );
 }

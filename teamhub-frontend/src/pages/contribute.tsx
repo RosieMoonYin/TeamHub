@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import Navbar from "../components/navbar";
 import ContributeForm from "../components/contributeForm";
+import Footer from "../components/footer";
 
 export default function Contribute() {
   return (
@@ -11,6 +12,8 @@ export default function Contribute() {
       <Link to="/">
         <button className="btn btn-primary">Home</button>
       </Link>
+
+      <Footer />
     </>
   );
 }
