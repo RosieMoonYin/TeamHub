@@ -24,3 +24,11 @@ export const fetchMeetings = async (): Promise<Meeting[]> => {
   }
   return response.json();
 };
+
+export const fetchPosts = async (): Promise<Post[]> => {
+  const response = await fetch("http://localhost:5082/api/Posts");
+  if (!response.ok) {
+    throw new Error("Network response was not ok");
+  }
+  return response.json();
+};

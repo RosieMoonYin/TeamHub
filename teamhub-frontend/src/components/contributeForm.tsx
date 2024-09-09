@@ -1,3 +1,5 @@
+import PostsChat from "./postsChat";
+
 export default function ContributeForm() {
   return (
     <>
@@ -34,6 +36,7 @@ export default function ContributeForm() {
 
         <section className="flex flex-col align-middle justify-center w-1/2 bg-slate-400 p-10 m-5">
           <p>Here Fetch ready done posts!</p>
+          <PostsChat />
         </section>
       </div>
     </>
