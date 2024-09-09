@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "teamhub-backend", "teamhub-backend\teamhub-backend.csproj", "{33643A7C-71C6-4CC3-A135-91B21B898ACB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "teamhub.Tests", "teamhub.Tests\teamhub.Tests.csproj", "{E0678D4F-EDC4-4C9E-95B8-80861F08B45A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{33643A7C-71C6-4CC3-A135-91B21B898ACB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33643A7C-71C6-4CC3-A135-91B21B898ACB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33643A7C-71C6-4CC3-A135-91B21B898ACB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33643A7C-71C6-4CC3-A135-91B21B898ACB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E0678D4F-EDC4-4C9E-95B8-80861F08B45A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0678D4F-EDC4-4C9E-95B8-80861F08B45A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0678D4F-EDC4-4C9E-95B8-80861F08B45A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0678D4F-EDC4-4C9E-95B8-80861F08B45A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
