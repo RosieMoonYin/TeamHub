@@ -5,7 +5,7 @@ export default function Archive() {
     <>
       <h2>Hello Meeting Archives</h2>
       <Link to="/">
-        <button>Home</button>
+        <button className="btn">Home</button>
       </Link>
     </>
   );
