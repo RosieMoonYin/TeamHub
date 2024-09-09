@@ -15,5 +15,4 @@ namespace teamhub_backend.Models;
 
         public string? AISummary { get; set; }
     
-        public List<Post>? Post { get; set; }
     }
