@@ -20,7 +20,9 @@ export default function Archive() {
       <p>Component to display meetings</p>
 
       <ul>
-        {data?.map((meeting) => <li key={meeting.id}>{meeting.title}</li>)}
+        {data?.map((meeting) => (
+          <li key={meeting.id}>{meeting.meetingName}</li>
+        ))}
       </ul>
 
       <Link to="/">
