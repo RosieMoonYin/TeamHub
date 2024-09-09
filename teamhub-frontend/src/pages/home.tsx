@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import TimeLine from "../components/timeLine";
 import Navbar from "../components/navbar";
 import ContributeCard from "../components/Cards/contributeCard";
+import MeetingCard from "../components/Cards/meetingCard";
+import ArchiveCard from "../components/Cards/archiveCard";
 
 export default function Home() {
   return (
@@ -22,8 +24,8 @@ export default function Home() {
 
       <section className="flex justify-center">
         <ContributeCard />
-        <ContributeCard />
-        <ContributeCard />
+        <MeetingCard />
+        <ArchiveCard />
       </section>
       <TimeLine />
     </>
