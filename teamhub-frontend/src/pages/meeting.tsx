@@ -1,7 +1,7 @@
 import Navbar from "../components/navbar";
 import Footer from "../components/footer";
 import PostsMeeting from "../components/postsMeeting";
-import MeetingSummary from "../components/meetingSummary";
+import MeetingUpdates from "../components/meetingUpdates";
 
 export default function Meeting() {
   return (
@@ -17,7 +17,7 @@ export default function Meeting() {
         </section>
 
         <section className="w-1/3 m-5">
-          <MeetingSummary />
+          <MeetingUpdates />
         </section>
       </div>
       <Footer />
