@@ -5,6 +5,7 @@ export default function Navbar() {
     <div className="navbar bg-base-100">
       <div className="flex-1">
         <Link className="btn btn-ghost text-xl" to="/">
+          <img src="/src/assets/logo-black.png" width={60} />
           SyncSpace
         </Link>
       </div>

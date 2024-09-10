@@ -27,12 +27,12 @@ export default function MeetingUpdates() {
   });
 
   const handleSave = () => {
-    const id = 1; //static value for now!
+    const id = 1; //static value for now!!!!!
     updateMeetingMutation.mutate(id);
   };
 
   const handleCloseMeeting = () => {
-    const id = 1; //static value now
+    const id = 1; //static value now!!!!!
     closeMeetingMutation.mutate(id);
   };
 

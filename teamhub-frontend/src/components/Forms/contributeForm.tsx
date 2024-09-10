@@ -3,28 +3,30 @@ import { useState } from "react";
 
 import { createPost } from "../api";
 import PostsChat from "../postsChat";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 export default function ContributeForm() {
+  const location = useLocation();
+  const navigate = useNavigate();
   const [personName, setPersonName] = useState("");
   const [postType, setPostType] = useState("General");
   const [textInput, setTextInput] = useState("");
   const [status, setStatus] = useState("Open");
-  const [meetingId, setMeetingId] = useState(1);
+  const meetingId = location.state?.meetingId || 1;
 
   const queryClient = useQueryClient();
 
   const mutation = useMutation({
     mutationFn: createPost,
     onSuccess: () => {
-      console.log("Post created seccesfully");
+      alert("Post created seccesfully");
       queryClient.invalidateQueries({ queryKey: ["post"] });
 
+      navigate("/");
       setPersonName("");
       setPostType("General");
       setTextInput("");
       setStatus("Open");
-      setMeetingId(1);
     },
     onError: (error) => {
       console.error("Error creating post:", error);
@@ -51,17 +53,6 @@ export default function ContributeForm() {
               value={personName}
               onChange={(e) => setPersonName(e.target.value)}
             />
-
-            <select
-              className="select select-primary w-full max-w-s m-1"
-              value={meetingId}
-              onChange={(e) => setMeetingId(Number(e.target.value))}
-            >
-              {<option>Choose a Meeting</option>}
-              <option value="1">Meeting name</option>
-              <option value="2">Meeting name 2</option>
-              <option value="3">Meeting name 3</option>
-            </select>
 
             <select
               className="select select-primary w-full max-w-s m-1"
