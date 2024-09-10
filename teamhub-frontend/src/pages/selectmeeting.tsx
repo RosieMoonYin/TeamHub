@@ -8,13 +8,10 @@ export default function SelectMeeting() {
     <>
       <Navbar />
 
-      <section>
-        <SelectOpenMeeting />
-      </section>
+      <SelectOpenMeeting />
 
-      <section className="w-80 m-10 flex flex-center">
-        <AddMeetingForm />
-      </section>
+      <AddMeetingForm />
+
       <Footer />
     </>
   );

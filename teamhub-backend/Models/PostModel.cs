@@ -9,7 +9,7 @@ public class Post
 
     public string PostType { get; set; } = "General";
 
-    public string Status { get; set; } = "Open";
+    public string Status { get; set; } = "Not Urgent";
 
     public int MeetingId { get; set; } //my foreign key
 

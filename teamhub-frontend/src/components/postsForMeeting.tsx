@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { fetchPosts, Post } from "./api";
 
-export default function PostsMeeting() {
+export default function PostsForMeeting() {
   const {
     data: posts,
     error,
@@ -25,7 +25,7 @@ export default function PostsMeeting() {
             <h2 className="card-title">{post.personName}</h2>
             <p>{post.textInput}</p>
             <div className="card-actions justify-end">
-              <button className="btn btn-primary">View Details</button>
+              <button className="btn btn-xs">Archive</button>
             </div>
           </div>
         </div>

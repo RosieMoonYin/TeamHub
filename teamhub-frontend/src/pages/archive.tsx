@@ -1,7 +1,7 @@
 import Navbar from "../components/navbar";
 import Footer from "../components/footer";
 import MeetingList from "../components/meetingList";
-import PostsMeeting from "../components/postsMeeting";
+import PostsMeeting from "../components/postsForMeeting";
 
 export default function Archive() {
   return (

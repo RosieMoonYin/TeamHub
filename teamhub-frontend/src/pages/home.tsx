@@ -11,12 +11,12 @@ export default function Home() {
     <>
       <Navbar />
 
-      <h1 className="text-4xl m-5">Streamline your meetings with ease</h1>
-      <p className="text m-10">
-        Sync Spaces helps small businesses and startups manage and summarize
-        issues effortlessly, ensuring every meeting is organized and productive.
+      <h1 className="text-5xl m-5 mt-20">SyncSpace</h1>
+      <p className="text m-20 text-center ms-40 me-40">
+        We help small businesses and startups to manage and summarize issues
+        effortlessly, ensuring every meeting is organized and productive.
         Simplify your workflow and focus on what matters most with a smart
-        meeting board designed for your needs.
+        meeting board designed for your needs. Get started CREATE CONTRIBUTE
       </p>
 
       <section className="flex justify-center">

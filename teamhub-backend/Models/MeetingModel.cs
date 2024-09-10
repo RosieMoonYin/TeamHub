@@ -11,7 +11,7 @@ namespace teamhub_backend;
         public required DateTime MeetingDate { get; set; }
 
 
-        public string? Summary { get; set; } // user will add at end of meeting
+        public string? Summary { get; set; } 
 
         public string? AISummary { get; set; }
 

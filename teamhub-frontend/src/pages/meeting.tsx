@@ -1,6 +1,6 @@
 import Navbar from "../components/navbar";
 import Footer from "../components/footer";
-import PostsMeeting from "../components/postsMeeting";
+import PostsForMeeting from "../components/postsForMeeting";
 import MeetingUpdates from "../components/meetingUpdates";
 
 export default function Meeting() {
@@ -13,7 +13,7 @@ export default function Meeting() {
       <button className="btn btn-primary btn-lg">Summarise AI</button>
       <div className="flex flex-row">
         <section className="w-2/3 m-5">
-          <PostsMeeting />
+          <PostsForMeeting />
         </section>
 
         <section className="w-1/3 m-5">

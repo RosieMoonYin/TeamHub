@@ -28,57 +28,68 @@ export default function AddMeetingForm() {
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          placeholder="Meeting name"
-          value={meetingName}
-          onChange={(e) => setMeetingName(e.target.value)}
-          className="input input-bordered input-primary w-full max-w-xs"
-        />
-        <input
-          type="text"
-          placeholder="Brief description"
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-          className="input input-bordered input-primary w-full max-w-xs"
-        />
-
-        <label htmlFor="meetingDateTime">Meeting (date and time):</label>
-        <input
-          type="datetime-local"
-          id="meetingDateTime"
-          name="meetingDateTime"
-          value={meetingDate}
-          onChange={(e) => setMeetingDate(e.target.value)}
-          className="input input-bordered input-primary w-full max-w-xs"
-        />
-
-        <Link to="/">
-          <button className="btn btn-accent bg-slate-400 w-40 m-1">
-            Go Back
-          </button>
-        </Link>
-
-        <button
-          type="submit"
-          className="btn btn-primary w-40 m-1"
-          disabled={mutation.isPending}
+      <div className="flex flex-center justify-center mt-40">
+        <form
+          onSubmit={handleSubmit}
+          className="flex flex-col align-middle justify-center  max-w-96"
         >
-          {mutation.isPending ? "Creating..." : "Create"}
-        </button>
+          <input
+            type="text"
+            placeholder="Meeting name"
+            value={meetingName}
+            onChange={(e) => setMeetingName(e.target.value)}
+            className="input input-bordered input-primary w-full max-w-s m-2"
+          />
+          <input
+            type="text"
+            placeholder="Brief description"
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+            className="input input-bordered input-primary w-full max-w-s m-2"
+          />
 
-        {mutation.isError && (
-          <div className="text-red-500 mt-2">
-            Error: {mutation.error.message}
+          <label
+            htmlFor="meetingDateTime"
+            className="text-xs text-slate-500 text-left max-w-s mt-2 ms-3"
+          >
+            Meeting date and time:
+          </label>
+          <input
+            type="datetime-local"
+            id="meetingDateTime"
+            name="meetingDateTime"
+            value={meetingDate}
+            onChange={(e) => setMeetingDate(e.target.value)}
+            className="input input-bordered input-primary w-full max-w-s m-2"
+          />
+          <div className="m-6 flex">
+            <Link to="/">
+              <button className="btn btn-accent bg-slate-400 w-40 m-2">
+                Go Back
+              </button>
+            </Link>
+
+            <button
+              type="submit"
+              className="btn btn-primary w-40 m-2"
+              disabled={mutation.isPending}
+            >
+              {mutation.isPending ? "Creating..." : "Create"}
+            </button>
           </div>
-        )}
-        {mutation.isSuccess && (
-          <div className="text-green-500 mt-2">
-            Meeting created successfully!
-          </div>
-        )}
-      </form>
+
+          {mutation.isError && (
+            <div className="text-red-500 mt-2">
+              Error: {mutation.error.message}
+            </div>
+          )}
+          {mutation.isSuccess && (
+            <div className="text-green-500 mt-2">
+              Meeting created successfully!
+            </div>
+          )}
+        </form>
+      </div>
     </>
   );
 }
