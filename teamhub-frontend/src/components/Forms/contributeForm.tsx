@@ -1,4 +1,4 @@
-import { useMutation } from "@tanstack/react-query";
+import { QueryClient, useMutation } from "@tanstack/react-query";
 import { useState } from "react";
 
 import { createPost } from "../api";
@@ -11,10 +11,13 @@ export default function ContributeForm() {
   const [status, setStatus] = useState("Open");
   const [meetingId, setMeetingId] = useState(1);
 
+  const queryClient = new QueryClient();
+
   const mutation = useMutation({
     mutationFn: createPost,
     onSuccess: () => {
-      <p>create was successful</p>;
+      console.log("Post created seccesfully");
+      queryClient.invalidateQueries({ queryKey: ["post"] });
     },
     onError: (error) => {
       console.error("Error creating post:", error);
@@ -44,7 +47,7 @@ export default function ContributeForm() {
               value={meetingId}
               onChange={(e) => setMeetingId(Number(e.target.value))}
             >
-              {/* <option disabled selected>
+              {/* <option>
                 Choose a Meeting
               </option> */}
               <option value="1">Meeting name</option>
@@ -57,7 +60,7 @@ export default function ContributeForm() {
               value={postType}
               onChange={(e) => setPostType(e.target.value)}
             >
-              {/* <option disabled selected>
+              {/* <option>
                 Choose a category
               </option> */}
               <option value="Concern">Concern</option>
@@ -80,7 +83,7 @@ export default function ContributeForm() {
                   className="toggle"
                   checked={status == "Urgent"}
                   onChange={() =>
-                    setStatus(status == "Urget" ? "Open" : "Urgent")
+                    setStatus(status == "Urgent" ? "Open" : "Urgent")
                   }
                 />
               </label>
