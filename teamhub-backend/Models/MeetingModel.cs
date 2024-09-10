@@ -15,6 +15,8 @@ namespace teamhub_backend;
 
         public string? AISummary { get; set; }
 
+        public string? Status { get; set; } = "Open";
+
         public List<Post>? Posts { get; set; } = new List<Post>();
     
     }
