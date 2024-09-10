@@ -1,24 +1,25 @@
-import { Link } from "react-router-dom";
 import Navbar from "../components/navbar";
 import Footer from "../components/footer";
 import PostsMeeting from "../components/postsMeeting";
+import MeetingSummary from "../components/meetingSummary";
 
 export default function Meeting() {
   return (
     <>
       <Navbar />
-      <h2>Hello Meeting Opened</h2>
 
-      <PostsMeeting />
+      <h2>Issues raised</h2>
+      <h3>click summarize to generate meeting focus points</h3>
+      <button className="btn btn-primary btn-lg">Summarise AI</button>
+      <div className="flex flex-row">
+        <section className="w-2/3 m-5">
+          <PostsMeeting />
+        </section>
 
-      <section>
-        <h2>Put summary here!</h2>
-      </section>
-
-      <Link to="/">
-        <button className="btn">Home</button>
-      </Link>
-
+        <section className="w-1/3 m-5">
+          <MeetingSummary />
+        </section>
+      </div>
       <Footer />
     </>
   );
