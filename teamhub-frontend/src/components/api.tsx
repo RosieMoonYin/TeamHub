@@ -40,7 +40,7 @@ export const createPost = async (postData: {
   status: string;
   meetingId: number;
 }) => {
-  const response = await fetch("/api/posts", {
+  const response = await fetch("http://localhost:5082/api/Posts", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

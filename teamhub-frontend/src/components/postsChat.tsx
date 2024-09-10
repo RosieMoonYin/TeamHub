@@ -17,14 +17,14 @@ export default function PostsChat() {
       <div>
         {lastFivePosts?.map((post) => (
           <div className="chat chat-start" key={post.id}>
-            <div className="chat-image avatar">
+            {/* <div className="chat-image avatar">
               <div className="w-10 rounded-full">
                 <img
                   alt="Avatar"
                   src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
                 />
               </div>
-            </div>
+            </div> */}
             <div className="chat-bubble chat-bubble-primary">
               {post.textInput}
             </div>
