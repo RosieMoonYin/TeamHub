@@ -8,7 +8,7 @@ export default function PostsChat() {
   });
 
   if (isLoading) return <div>Loading...</div>;
-  if (error) return <div>An erro occurred: {error.message}</div>;
+  if (error) return <div>An error occurred: {error.message}</div>;
 
   const lastFivePosts = data ? data.slice(-5) : [];
 
@@ -16,7 +16,7 @@ export default function PostsChat() {
     <>
       <div>
         {lastFivePosts?.map((post) => (
-          <div className="chat chat-start" key={post.id}>
+          <div className="chat chat-start gap-10" key={post.id}>
             {/* <div className="chat-image avatar">
               <div className="w-10 rounded-full">
                 <img
@@ -25,7 +25,7 @@ export default function PostsChat() {
                 />
               </div>
             </div> */}
-            <div className="chat-bubble chat-bubble-primary">
+            <div className="chat-bubble chat-bubble-accent m-2 p-6">
               {post.textInput}
             </div>
           </div>

@@ -14,10 +14,6 @@ export default function SelectOpenMeeting() {
           </div>
         </div>
       </div>
-
-      <div>
-        <h1>Input Form to add meeting</h1>
-      </div>
     </>
   );
 }

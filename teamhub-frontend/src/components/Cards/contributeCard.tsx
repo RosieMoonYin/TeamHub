@@ -13,13 +13,8 @@ export default function ContributeCard() {
           is heard!
         </p>
         <div className="card-actions justify-end">
-          <Link to="/contribute">
-            <button className="btn btn-primary">Contribute</button>
-          </Link>
           <Link to="/selectmeeting">
-            <button className="btn btn-primary">
-              Select Meeting/ contribute
-            </button>
+            <button className="btn btn-primary">Contribute</button>
           </Link>
         </div>
       </div>

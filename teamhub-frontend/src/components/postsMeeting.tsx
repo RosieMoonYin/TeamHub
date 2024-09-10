@@ -18,7 +18,7 @@ export default function PostsMeeting() {
   //show urgent first
 
   return (
-    <div className="flex flex-wrap gap-4">
+    <div className="flex flex-wrap justify-center m-10 gap-2">
       {posts?.map((post) => (
         <div key={post.id} className="card bg-base-100 w-96 shadow-xl">
           <div className="card-body">
