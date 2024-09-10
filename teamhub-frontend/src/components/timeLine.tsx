@@ -1,12 +1,12 @@
 export default function TimeLine() {
   return (
-    <ul className="steps m-20">
-      <li className="step step-info">Create meeting, or choose existing</li>
-      <li className="step step-info">Add issues to meeting</li>
-      <li className="step step-info">Open meeting to view sumarized issues</li>
-      <li className="step step-error" data-content="?">
-        Close meeting with AI summary and key action points
+    <ul className="steps steps-vertical m-10">
+      <li className="step step-primary">Create meeting, or choose existing</li>
+      <li className="step step-primary">Add issues to meeting</li>
+      <li className="step">
+        Use AI tools and key action points to enhance workflow
       </li>
+      <li className="step">Review past meetings recap key decision</li>
     </ul>
   );
 }

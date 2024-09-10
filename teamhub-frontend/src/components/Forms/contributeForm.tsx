@@ -1,7 +1,8 @@
 import { useMutation } from "@tanstack/react-query";
 import { useState } from "react";
-import PostsChat from "./postsChat";
-import { createPost } from "./api";
+
+import { createPost } from "../api";
+import PostsChat from "../postsChat";
 
 export default function ContributeForm() {
   const [personName, setPersonName] = useState("");

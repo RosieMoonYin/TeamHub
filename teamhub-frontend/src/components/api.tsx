@@ -61,6 +61,24 @@ export const createPost = async (postData: {
   return response.json();
 };
 
+export const createMeeting = async (meetingData: {
+  meetingName: string;
+  description?: string;
+  meetingDate: string;
+}) => {
+  const response = await fetch("http://localhost:5082/api/Meeting", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(meetingData),
+  });
+  if (!response.ok) {
+    throw new Error("Failed to create meeting");
+  }
+  return response.json();
+};
+
 export const updateMeeting = async (
   id: number,
   updateData: UpdateMeetingDto

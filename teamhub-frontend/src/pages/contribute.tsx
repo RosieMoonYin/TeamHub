@@ -1,6 +1,6 @@
 import Navbar from "../components/navbar";
-import ContributeForm from "../components/contributeForm";
 import Footer from "../components/footer";
+import ContributeForm from "../components/Forms/contributeForm";
 
 export default function Contribute() {
   return (

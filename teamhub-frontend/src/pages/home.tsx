@@ -6,15 +6,10 @@ import ArchiveCard from "../components/Cards/archiveCard";
 import TrackerWidget from "../components/trackerWidget";
 import Footer from "../components/footer";
 
-import { Button } from "flowbite-react";
-
 export default function Home() {
   return (
     <>
       <Navbar />
-
-      <Button gradientMonochrome="info">Info</Button>
-      <Button gradientMonochrome="teal">Teal</Button>
 
       <h1>SyncSpace</h1>
       <p>The Meeting Board</p>
@@ -23,6 +18,10 @@ export default function Home() {
         <ContributeCard />
         <MeetingCard />
         <ArchiveCard />
+      </section>
+
+      <section>
+        <h1> Add New Meeting </h1>
       </section>
       <TimeLine />
       <TrackerWidget />
