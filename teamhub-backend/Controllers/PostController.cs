@@ -24,6 +24,17 @@ namespace teamhub_backend
             return Ok(post);
         }
 
+        [HttpGet("MeetingId")]
+        public ActionResult<IEnumerable<Post>> GetPostsByMeetingId([FromQuery] int meetingId)
+        {
+            var posts = Data.Posts.Where(p => p.MeetingId == meetingId).ToList();
+            if (posts == null || !posts.Any())
+            {
+                return NotFound("No posts found for the specified meeting ID");
+            }
+            return Ok(posts);
+        }
+
         // POST: api/posts
         [HttpPost]
         public ActionResult<Post> CreatePost(Post post)

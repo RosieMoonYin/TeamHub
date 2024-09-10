@@ -1,10 +1,13 @@
 import { useMutation } from "@tanstack/react-query";
 import { updateMeeting } from "./api";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
 
 export default function MeetingUpdates() {
   const [summary, setSummary] = useState("");
+
+  const location = useLocation();
+  const meetingId = location.state?.meetingId as number;
 
   const updateMeetingMutation = useMutation({
     mutationFn: (id: number) => updateMeeting(id, { summary }),
@@ -25,15 +28,20 @@ export default function MeetingUpdates() {
       console.error("Error closing meeting", error);
     },
   });
-
   const handleSave = () => {
-    const id = 1; //static value for now!!!!!
-    updateMeetingMutation.mutate(id);
+    if (meetingId) {
+      updateMeetingMutation.mutate(meetingId);
+    } else {
+      alert("Meeting ID is missing");
+    }
   };
 
   const handleCloseMeeting = () => {
-    const id = 1; //static value now!!!!!
-    closeMeetingMutation.mutate(id);
+    if (meetingId) {
+      closeMeetingMutation.mutate(meetingId);
+    } else {
+      alert("Meeting ID is missing");
+    }
   };
 
   return (

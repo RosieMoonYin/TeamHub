@@ -1,6 +1,5 @@
 import { useQueryClient, useMutation } from "@tanstack/react-query";
 import { useState } from "react";
-
 import { createPost } from "../api";
 import PostsChat from "../postsChat";
 import { Link, useLocation, useNavigate } from "react-router-dom";

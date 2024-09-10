@@ -13,7 +13,7 @@ export default function MeetingCard() {
         </p>
         <div className="card-actions justify-end">
           <Link to="/selectmeetingLite">
-            <button className="btn btn-primary">Open Meeting</button>
+            <button className="btn btn-primary">Select</button>
           </Link>
         </div>
       </div>

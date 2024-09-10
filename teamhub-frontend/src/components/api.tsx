@@ -47,6 +47,18 @@ export const fetchPosts = async (): Promise<Post[]> => {
   return response.json();
 };
 
+export const fetchPostsByMeetingId = async (
+  meetingId: number
+): Promise<Post[]> => {
+  const response = await fetch(
+    `http://localhost:5082/api/Posts/MeetingId?meetingId=${meetingId}`
+  );
+  if (!response.ok) {
+    throw new Error("Network response was not ok");
+  }
+  return response.json();
+};
+
 export const createPost = async (postData: {
   personName: string;
   textInput: string;
