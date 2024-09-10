@@ -7,16 +7,15 @@ export default function Meeting() {
   return (
     <>
       <Navbar />
+      <section>
+        <button className="btn btn-primary btn-lg">Summarise AI</button>
+      </section>
 
-      <h2>Issues raised</h2>
-      <h3>click summarize to generate meeting focus points</h3>
-      <button className="btn btn-primary btn-lg">Summarise AI</button>
-      <div className="flex flex-row">
-        <section className="w-2/3 m-5">
+      <div className="flex flex-col">
+        <section className="m-5">
           <PostsForMeeting />
         </section>
-
-        <section className="w-1/3 m-5">
+        <section className="m-5">
           <MeetingUpdates />
         </section>
       </div>

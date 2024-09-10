@@ -64,9 +64,7 @@ export default function AddMeetingForm() {
           />
           <div className="m-6 flex">
             <Link to="/">
-              <button className="btn btn-accent bg-slate-400 w-40 m-2">
-                Go Back
-              </button>
+              <button className="btn btn-accent w-40 m-2">Go Back</button>
             </Link>
 
             <button

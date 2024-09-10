@@ -39,10 +39,11 @@ export default function ContributeForm() {
 
   return (
     <>
-      <div className="flex justify-around flex-wrap bg-green-500 w-full pt-40 pb-20">
-        <section className="flex flex-col align-middle justify-center min-w-96 p-10 m-5">
+      <div className="flex justify-around flex-wrap w-full mt-20 pt-10 pb-20">
+        <section className="flex flex-col align-middle  justify-center min-w-96 p-10 m-5">
           <PostsChat />
         </section>
+
         <section className="flex flex-col p-10 m-5 min-w-96">
           <form onSubmit={handleSubmit}>
             <input
@@ -72,11 +73,11 @@ export default function ContributeForm() {
             ></textarea>
 
             <div className="form-control">
-              <label className="label cursor-pointer flex">
-                <p className="label-text">Flag as urgent</p>
+              <label className="label cursor-pointer">
+                <span className="label-text">Flag as urgent</span>
                 <input
                   type="checkbox"
-                  className="toggle"
+                  className="checkbox checkbox-primary"
                   checked={status == "Urgent"}
                   onChange={() =>
                     setStatus(status == "Urgent" ? "Open" : "Urgent")
@@ -85,28 +86,29 @@ export default function ContributeForm() {
               </label>
             </div>
 
-            <Link to="/">
-              <button className="btn btn-accent bg-slate-200 w-40 m-1">
-                Go Back
+            <div className="m-4">
+              <Link to="/">
+                <button className="btn btn-secondary w-40 m-2">Go Back</button>
+              </Link>
+              <button
+                type="submit"
+                className="btn btn-primary btn-m align-middle w-40 m-2"
+              >
+                {mutation.isPending ? "Creating..." : "Create"}
               </button>
-            </Link>
-            <button
-              type="submit"
-              className="btn btn-primary btn-m align-middle w-40 m-1"
-            >
-              {mutation.isPending ? "Creating..." : "Create"}
-            </button>
 
-            {mutation.isError && (
-              <div className="text-red-500 mt-2">
-                Error: {mutation.error.message}
-              </div>
-            )}
-            {mutation.isSuccess && (
-              <div className="text-green-500 mt-2">
-                Post created successfully!
-              </div>
-            )}
+              {mutation.isError && (
+                <div className="text-red-500 mt-2">
+                  Error: {mutation.error.message}
+                </div>
+              )}
+
+              {mutation.isSuccess && (
+                <div className="text-green-500 mt-2">
+                  Post created successfully!
+                </div>
+              )}
+            </div>
           </form>
         </section>
       </div>

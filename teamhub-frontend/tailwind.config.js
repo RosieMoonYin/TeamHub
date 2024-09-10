@@ -9,6 +9,6 @@ export default {
   },
   plugins: [daisyui, flowbite.plugin()],
   daisyui: {
-    themes: ["light", "dark", "corporate", "lofi"],
+    themes: ["light", "dark", "corporate", "lofi", "acid", "pastel", "cmyk"],
   },
 };

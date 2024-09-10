@@ -11,8 +11,8 @@ export default function Home() {
     <>
       <Navbar />
 
-      <h1 className="text-5xl m-5 mt-20">SyncSpace</h1>
-      <p className="text m-20 text-center ms-40 me-40">
+      <h1 className="text-8xl text-left m-5 mt-20">SyncSpace</h1>
+      <p className="text text-left m-20 ms-40 me-40">
         We help small businesses and startups to manage and summarize issues
         effortlessly, ensuring every meeting is organized and productive.
         Simplify your workflow and focus on what matters most with a smart
@@ -24,13 +24,10 @@ export default function Home() {
         <MeetingCard />
         <ArchiveCard />
       </section>
-
-      <section>
-        <h1> Add New Meeting </h1>
+      <section className="">
+        <TimeLine />
+        <TrackerWidget />
       </section>
-      <TimeLine />
-      <TrackerWidget />
-
       <Footer />
     </>
   );

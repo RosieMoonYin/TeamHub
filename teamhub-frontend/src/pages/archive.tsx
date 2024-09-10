@@ -11,7 +11,6 @@ export default function Archive() {
         <MeetingList />
         <PostsMeeting />
       </section>
-      <p>Display Past Meetings and Search posts archive</p>
       <Footer />
     </>
   );
