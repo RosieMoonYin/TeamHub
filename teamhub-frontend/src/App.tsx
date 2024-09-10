@@ -5,6 +5,7 @@ import Contribute from "./pages/contribute";
 import Archive from "./pages/archive";
 import Meeting from "./pages/meeting";
 import SelectMeeting from "./pages/selectmeeting";
+import SelectMeetingLite from "./pages/selectMeetingLite";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/archive" element={<Archive />} />
           <Route path="/meeting" element={<Meeting />} />
           <Route path="/selectmeeting" element={<SelectMeeting />} />
+          <Route path="/selectmeetingLite" element={<SelectMeetingLite />} />
         </Routes>
       </Router>
     </>

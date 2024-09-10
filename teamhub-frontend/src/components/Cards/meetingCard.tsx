@@ -12,7 +12,7 @@ export default function MeetingCard() {
           Your meeting space All voices clarified, summarised, prioritised
         </p>
         <div className="card-actions justify-end">
-          <Link to="/meeting">
+          <Link to="/selectmeetingLite">
             <button className="btn btn-primary">Open Meeting</button>
           </Link>
         </div>

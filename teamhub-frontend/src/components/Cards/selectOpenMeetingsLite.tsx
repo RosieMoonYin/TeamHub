@@ -2,7 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import { Link } from "react-router-dom";
 import { fetchOpenMeetings, Meeting } from "../api";
 
-export default function SelectOpenMeeting() {
+export default function SelectOpenMeetingLite() {
   const { data, isLoading, isError, error } = useQuery<Meeting[], Error>({
     queryKey: ["openMeetings"],
     queryFn: fetchOpenMeetings,
@@ -30,7 +30,7 @@ export default function SelectOpenMeeting() {
                   {openMeeting.description}
                 </p>
                 <div className="card-actions justify-end">
-                  <Link to="/contribute" state={{ meetingId: openMeeting.id }}>
+                  <Link to="/meeting" state={{ meetingId: openMeeting.id }}>
                     <button className="btn btn-primary btn-s">
                       Contribute
                     </button>
