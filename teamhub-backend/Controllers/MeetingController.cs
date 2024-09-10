@@ -39,6 +39,13 @@ public class UpdateMeetingDto
             var openMeetings = Data.Meetings.Where(m => m.Status == "Open").ToList();
             return Ok(openMeetings);
         }
+
+        [HttpGet("closed")]
+        public ActionResult<IEnumerable<Meeting>> GetClosedMeetings()
+        {
+            var openMeetings = Data.Meetings.Where(m => m.Status == "Closed").ToList();
+            return Ok(openMeetings);
+        }
         
 
         // POST: api/meetings
