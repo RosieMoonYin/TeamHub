@@ -4,6 +4,7 @@ import Home from "./pages/home";
 import Contribute from "./pages/contribute";
 import Archive from "./pages/archive";
 import Meeting from "./pages/meeting";
+import SelectMeeting from "./pages/selectmeeting";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route path="/contribute" element={<Contribute />} />
           <Route path="/archive" element={<Archive />} />
           <Route path="/meeting" element={<Meeting />} />
+          <Route path="/selectmeeting" element={<SelectMeeting />} />
         </Routes>
       </Router>
     </>

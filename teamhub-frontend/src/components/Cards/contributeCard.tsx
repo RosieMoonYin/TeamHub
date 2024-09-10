@@ -16,6 +16,11 @@ export default function ContributeCard() {
           <Link to="/contribute">
             <button className="btn btn-primary">Contribute</button>
           </Link>
+          <Link to="/selectmeeting">
+            <button className="btn btn-primary">
+              Select Meeting/ contribute
+            </button>
+          </Link>
         </div>
       </div>
     </div>
