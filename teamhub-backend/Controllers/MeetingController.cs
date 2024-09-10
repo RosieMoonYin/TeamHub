@@ -1,5 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
-namespace teamhub_backend
+namespace teamhub_backend;
 
 public class UpdateMeetingDto
 {
@@ -8,7 +8,7 @@ public class UpdateMeetingDto
     public string? Status { get; set; }
 }
 
-{
+
     [ApiController]
     [Route("api/[controller]")]
     public class MeetingController : ControllerBase
@@ -54,5 +54,33 @@ public class UpdateMeetingDto
             Data.Meetings.Remove(meeting);
             return NoContent();
         }
+
+        // PATCH: api/meetings/{id}
+        [HttpPatch("{id}")]
+        public ActionResult<Meeting> PatchMeeting(int id, [FromBody] UpdateMeetingDto updateMeetingDto)
+        {
+            var meeting = Data.Meetings.FirstOrDefault(m => m.Id == id);
+            if (meeting == null)
+            {
+                return NotFound();
+            }
+
+            if (updateMeetingDto.Summary != null)
+            {
+                meeting.Summary = updateMeetingDto.Summary;
+            }
+
+            if (updateMeetingDto.AISummary != null)
+            {
+                meeting.AISummary = updateMeetingDto.AISummary;
+            }
+
+            if (updateMeetingDto.Status != null)
+            {
+                meeting.Status = updateMeetingDto.Status;
+            }
+
+            return Ok(meeting);
+        }
     }
-}
+
