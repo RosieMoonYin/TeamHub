@@ -32,6 +32,15 @@ public class UpdateMeetingDto
             return Ok(meeting);
         }
 
+        // GET: api/meetings/open
+        [HttpGet("open")]
+        public ActionResult<IEnumerable<Meeting>> GetOpenMeetings()
+        {
+            var openMeetings = Data.Meetings.Where(m => m.Status == "Open").ToList();
+            return Ok(openMeetings);
+        }
+        
+
         // POST: api/meetings
         [HttpPost]
         public ActionResult<Meeting> PostMeeting([FromBody] Meeting meeting)
@@ -82,5 +91,5 @@ public class UpdateMeetingDto
 
             return Ok(meeting);
         }
-    }
-
+    
+ }
