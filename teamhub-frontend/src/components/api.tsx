@@ -17,6 +17,12 @@ export interface Post {
   meetingId: number;
 }
 
+export interface UpdateMeetingDto {
+  summary?: string;
+  aiSummary?: string;
+  status?: string;
+}
+
 export const fetchMeetings = async (): Promise<Meeting[]> => {
   const response = await fetch("http://localhost:5082/api/Meeting");
   if (!response.ok) {
@@ -50,6 +56,25 @@ export const createPost = async (postData: {
 
   if (!response.ok) {
     throw new Error("Failed to create post");
+  }
+
+  return response.json();
+};
+
+export const updateMeeting = async (
+  id: number,
+  updateData: UpdateMeetingDto
+): Promise<Meeting> => {
+  const response = await fetch(`http://localhost:5082/api/Meeting/${id}`, {
+    method: "PATCH",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(updateData),
+  });
+
+  if (!response.ok) {
+    throw new Error("Failed to update meeting");
   }
 
   return response.json();
