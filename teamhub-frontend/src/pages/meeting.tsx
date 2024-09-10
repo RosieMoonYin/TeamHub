@@ -8,9 +8,9 @@ export default function Meeting() {
     <>
       <Navbar />
       <h2>Hello Meeting Opened</h2>
-      <section>
-        <PostsMeeting />
-      </section>
+
+      <PostsMeeting />
+
       <section>
         <h2>Put summary here!</h2>
       </section>
