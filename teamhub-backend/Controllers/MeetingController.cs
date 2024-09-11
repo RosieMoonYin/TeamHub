@@ -86,6 +86,10 @@ public class UpdateMeetingDto
             {
                 meeting.Summary = updateMeetingDto.Summary;
             }
+            if (updateMeetingDto.ActionPoints != null)
+            {
+                meeting.ActionPoints = updateMeetingDto.ActionPoints;
+            }
 
             if (updateMeetingDto.AISummary != null)
             {
