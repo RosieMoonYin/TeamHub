@@ -15,4 +15,6 @@ public class Post
     
     public int MeetingId { get; set; } //my foreign key
 
+    public Meeting? Meeting { get; set; } //testing 
+
 }
