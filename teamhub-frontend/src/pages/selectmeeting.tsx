@@ -9,7 +9,14 @@ export default function SelectMeeting() {
       <Navbar />
 
       <SelectOpenMeeting />
-
+      <h1 className="text-8xl text-left m-5 mt-20 mb-20">SyncSpace</h1>
+      <p className="text text-left text-4xl m-5 ms-40 me-40">
+        Not seeing the meeting you’re looking for?
+      </p>
+      <p className="text text-left text-lg m-5 ms-60 me-40">
+        No worries! Just fill out the form below to create a new one and get
+        things rolling.
+      </p>
       <AddMeetingForm />
 
       <Footer />

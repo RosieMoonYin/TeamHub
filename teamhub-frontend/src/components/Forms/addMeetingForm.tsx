@@ -64,12 +64,12 @@ export default function AddMeetingForm() {
           />
           <div className="m-6 flex">
             <Link to="/">
-              <button className="btn btn-accent w-40 m-2">Go Back</button>
+              <button className="btn btn-secondary w-40 m-2">Go Back</button>
             </Link>
 
             <button
               type="submit"
-              className="btn btn-primary w-40 m-2"
+              className="btn btn-success w-40 m-2"
               disabled={mutation.isPending}
             >
               {mutation.isPending ? "Creating..." : "Create"}

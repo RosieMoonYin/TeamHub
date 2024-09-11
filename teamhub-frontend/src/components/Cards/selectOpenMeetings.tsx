@@ -31,9 +31,7 @@ export default function SelectOpenMeeting() {
                 </p>
                 <div className="card-actions justify-end">
                   <Link to="/contribute" state={{ meetingId: openMeeting.id }}>
-                    <button className="btn btn-primary btn-s">
-                      Contribute
-                    </button>
+                    <button className="btn btn-info btn-s">Contribute</button>
                   </Link>
                 </div>
               </div>

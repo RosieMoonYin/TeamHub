@@ -92,7 +92,7 @@ export default function ContributeForm() {
               </Link>
               <button
                 type="submit"
-                className="btn btn-primary btn-m align-middle w-40 m-2"
+                className="btn btn-success btn-m align-middle w-40 m-2"
               >
                 {mutation.isPending ? "Creating..." : "Create"}
               </button>
