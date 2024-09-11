@@ -23,13 +23,13 @@ export interface UpdateMeetingDto {
   status?: string;
 }
 
-export const fetchMeetings = async (): Promise<Meeting[]> => {
-  const response = await fetch("http://localhost:5082/api/Meeting");
-  if (!response.ok) {
-    throw new Error("Network response was not ok");
-  }
-  return response.json();
-};
+// export const fetchMeetings = async (): Promise<Meeting[]> => {
+//   const response = await fetch("http://localhost:5082/api/Meeting");
+//   if (!response.ok) {
+//     throw new Error("Network response was not ok");
+//   }
+//   return response.json();
+// };
 
 export const fetchOpenMeetings = async (): Promise<Meeting[]> => {
   const response = await fetch("http://localhost:5082/api/Meeting/open");
