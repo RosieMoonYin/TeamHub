@@ -1,9 +1,22 @@
+using teamhub_backend;
+
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+
+
+
+var apiKey = builder.Configuration["OpenAI:ApiKey"];
+if (string.IsNullOrEmpty(apiKey))
+{
+    throw new InvalidOperationException("API Key is not set in configuration.");
+}
+builder.Services.AddSingleton(new OpenAIService(apiKey));
+
+//Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
