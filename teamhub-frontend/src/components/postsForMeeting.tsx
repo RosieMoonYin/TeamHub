@@ -34,6 +34,11 @@ export default function PostsForMeeting() {
         return (
           <div key={post.id} className={`card ${cardColor} w-96 shadow-xl`}>
             <div className="card-body">
+              {post.status == "Urgent" && (
+                <div className="badge badge-warning badge-sm m-1">
+                  {post.status}
+                </div>
+              )}
               <h2 className="card-title">{post.personName}</h2>
               <p>{post.textInput}</p>
               <div className="card-actions justify-end">

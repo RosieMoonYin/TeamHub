@@ -25,7 +25,7 @@ export default function PostsChat() {
                 />
               </div>
             </div> */}
-            <div className="chat-bubble chat-bubble-accent m-2 p-6">
+            <div className="chat-bubble chat-bubble-accent m-2 p-6 text-left">
               {post.textInput}
             </div>
           </div>
