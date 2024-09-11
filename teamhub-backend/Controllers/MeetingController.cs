@@ -4,6 +4,7 @@ namespace teamhub_backend;
 public class UpdateMeetingDto
 {
     public string? Summary { get; set; }
+    public List<string>? ActionPoints { get; set; }
     public string? AISummary { get; set; }
     public string? Status { get; set; }
 }

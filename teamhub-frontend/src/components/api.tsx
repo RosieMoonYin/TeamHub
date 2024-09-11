@@ -4,6 +4,7 @@ export interface Meeting {
   description?: string;
   meetingDate: string;
   summary?: string;
+  actionPoints?: string[];
   aiSummary?: string;
   posts?: Post[];
 }
@@ -19,6 +20,7 @@ export interface Post {
 
 export interface UpdateMeetingDto {
   summary?: string;
+  actionPoints?: string[];
   aiSummary?: string;
   status?: string;
 }

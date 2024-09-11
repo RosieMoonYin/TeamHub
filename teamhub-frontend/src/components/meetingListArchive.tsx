@@ -20,15 +20,33 @@ export default function MeetingListArchive() {
               name="my-accordion"
               id={`accordion-${meeting.id}`}
             />
-            <div className="collapse-title text-xl font-medium">
+            <div className="collapse-title text-2xl font-medium">
               <label htmlFor={`accordion-${meeting.id}`}>
                 {meeting.meetingName}
               </label>
             </div>
             <div className="collapse-content">
-              <p>{meeting.description}</p>
-              <p>{meeting.summary}</p>
-              <p>{meeting.aiSummary}</p>
+              <p className="text-left text-m text-slate-700 m-2">
+                {meeting.description}
+              </p>
+              <p className="text-left text-m  text-slate-700 m-2">
+                {meeting.summary}
+              </p>
+
+              {meeting.actionPoints && meeting.actionPoints.length > 0 && (
+                <ul className="list-disc pl-5">
+                  {meeting.actionPoints.map((point, index) => (
+                    <li
+                      key={index}
+                      className="text-left text-m  text-purple-500 m-4"
+                    >
+                      {point}
+                    </li>
+                  ))}
+                </ul>
+              )}
+
+              <p className="text-left">{meeting.aiSummary}</p>
             </div>
           </div>
         ))

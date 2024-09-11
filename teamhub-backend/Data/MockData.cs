@@ -27,29 +27,47 @@ public static class Data
         },
         //status closed
         new Meeting
+    {
+        Id = 4,
+        MeetingName = "Exhibition Debrief",
+        Description = "Post-exhibition debrief discussing what went well and what could be improved for future exhibitions.",
+        MeetingDate = new DateTime(2024, 9, 1, 16, 0, 0, DateTimeKind.Utc),
+        Status = "Closed",
+        Summary = "The exhibition was well-received with positive feedback on the layout and artist selections.",
+        ActionPoints = new List<string>
         {
-            Id = 4,
-            MeetingName = "Exhibition Debrief",
-            Description = "Post-exhibition debrief discussing what went well and what could be improved for future exhibitions.",
-            MeetingDate = new DateTime(2024, 9, 1, 16, 0, 0, DateTimeKind.Utc),
-            Status = "Closed"
-        },
-        new Meeting
-        {
-            Id = 5,
-            MeetingName = "Annual Gallery Review",
-            Description = "Annual review of the gallery’s performance, financial status, and strategic planning for the upcoming year.",
-            MeetingDate = new DateTime(2024, 9, 5, 9, 0, 0, DateTimeKind.Utc),
-            Status = "Closed"
-        },
-        new Meeting
-        {
-            Id = 6,
-            MeetingName = "Art Education Program Wrap-up",
-            Description = "Wrap-up meeting for the art education programs held throughout the year, evaluating successes and areas for improvement.",
-            MeetingDate = new DateTime(2024, 9, 8, 13, 30, 0, DateTimeKind.Utc),
-            Status = "Closed"
+            "Improve promotional strategies for better reach.",
+            "Increase interactive elements to boost visitor engagement."
         }
+    },
+    new Meeting
+    {
+        Id = 5,
+        MeetingName = "Annual Gallery Review",
+        Description = "Annual review of the gallery’s performance, financial status, and strategic planning for the upcoming year.",
+        MeetingDate = new DateTime(2024, 9, 5, 9, 0, 0, DateTimeKind.Utc),
+        Status = "Closed",
+        Summary = "The gallery performed well financially, exceeding revenue targets.",
+        ActionPoints = new List<string>
+        {
+            "Expand outreach programs to engage a broader audience.",
+            "Explore new funding opportunities to support gallery initiatives."
+        }
+    },
+    new Meeting
+    {
+        Id = 6,
+        MeetingName = "Art Education Program Wrap-up",
+        Description = "Wrap-up meeting for the art education programs held throughout the year, evaluating successes and areas for improvement.",
+        MeetingDate = new DateTime(2024, 9, 8, 13, 30, 0, DateTimeKind.Utc),
+        Status = "Closed",
+        Summary = "The art education programs were successful in increasing community engagement and participation.",
+        ActionPoints = new List<string>
+        {
+            "Develop advanced workshops to further engage participants.",
+            "Improve accessibility of programs to reach a wider audience."
+        }
+    },
     };
 
     public static List<Post> Posts { get; set; } = new List<Post>

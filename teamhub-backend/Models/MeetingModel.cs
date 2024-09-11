@@ -13,6 +13,8 @@ namespace teamhub_backend;
 
         public string? Summary { get; set; } 
 
+        public List<String>? ActionPoints { get; set; } = new List<string>();
+
         public string? AISummary { get; set; }
 
         public string? Status { get; set; } = "Open";
