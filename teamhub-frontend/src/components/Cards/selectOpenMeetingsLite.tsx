@@ -44,3 +44,4 @@ export default function SelectOpenMeetingLite() {
     </>
   );
 }
+//if statement checks if meeting has less then 3 participants, or if meeting has less than 4 posts

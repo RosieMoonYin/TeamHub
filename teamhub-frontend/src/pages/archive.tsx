@@ -1,6 +1,6 @@
 import Navbar from "../components/navbar";
 import Footer from "../components/footer";
-import MeetingList from "../components/meetingList";
+import MeetingListArchive from "../components/meetingListArchive";
 import PostsMeeting from "../components/postsForMeeting";
 
 export default function Archive() {
@@ -8,7 +8,7 @@ export default function Archive() {
     <>
       <Navbar />
       <section className="flex flex-col align-middle m-20">
-        <MeetingList />
+        <MeetingListArchive />
         <PostsMeeting />
       </section>
       <Footer />

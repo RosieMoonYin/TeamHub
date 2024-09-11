@@ -1,10 +1,10 @@
 import { useQuery } from "@tanstack/react-query";
-import { fetchMeetings, Meeting } from "../components/api";
+import { fetchClosedMeetings, Meeting } from "./api";
 
-export default function MeetingList() {
+export default function MeetingListArchive() {
   const { data, error, isLoading } = useQuery<Meeting[], Error>({
-    queryKey: ["meetings"],
-    queryFn: fetchMeetings,
+    queryKey: ["closedMeetings"],
+    queryFn: fetchClosedMeetings,
   });
 
   if (isLoading) return <div>Loading...</div>;
@@ -27,7 +27,8 @@ export default function MeetingList() {
             </div>
             <div className="collapse-content">
               <p>{meeting.description}</p>
-              <p>{meeting.summary} SUMMARY WILL GO HERE!</p>
+              <p>{meeting.summary}</p>
+              <p>{meeting.aiSummary}</p>
             </div>
           </div>
         ))
