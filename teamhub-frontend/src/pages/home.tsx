@@ -16,7 +16,7 @@ export default function Home() {
         We help small businesses and startups to manage and summarize issues
         effortlessly, ensuring every meeting is organized and productive.
         Simplify your workflow and focus on what matters most with a smart
-        meeting board designed for your needs. Get started CREATE CONTRIBUTE
+        meeting board designed for your needs.
       </p>
 
       <section className="flex justify-center">

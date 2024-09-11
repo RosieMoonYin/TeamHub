@@ -2,14 +2,14 @@ import Navbar from "../components/navbar";
 import Footer from "../components/footer";
 import PostsForMeeting from "../components/postsForMeeting";
 import MeetingUpdates from "../components/meetingUpdates";
+import SummaryButtonAI from "../components/summaryButtonAI";
 
 export default function Meeting() {
   return (
     <>
       <Navbar />
-      <section>
-        <button className="btn btn-primary btn-lg">Summarise AI</button>
-      </section>
+
+      <SummaryButtonAI />
 
       <div className="flex flex-col">
         <section className="m-5">

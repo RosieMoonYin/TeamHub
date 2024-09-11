@@ -133,6 +133,7 @@ export const fetchAISummary = async (meetingId: number) => {
   if (!response.ok) {
     throw new Error("Failed to fetch summary");
   }
-  const data = await response.json();
-  return data.Summary;
+  // const data = await response.json();
+  // return data.Summary;
+  return response.json();
 };
