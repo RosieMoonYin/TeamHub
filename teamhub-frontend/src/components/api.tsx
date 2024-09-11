@@ -127,3 +127,12 @@ export const updateMeeting = async (
 
   return response.json();
 };
+
+export const fetchAISummary = async (meetingId: number) => {
+  const response = await fetch(`/api/openai/meetings/${meetingId}/summary`);
+  if (!response.ok) {
+    throw new Error("Failed to fetch summary");
+  }
+  const data = await response.json();
+  return data.Summary;
+};
