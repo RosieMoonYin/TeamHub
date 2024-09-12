@@ -11,6 +11,8 @@ export default function SelectOpenMeetingLite() {
   if (isLoading) return <p>Loading...</p>;
   if (isError) return <p>Error: {error.message}</p>;
 
+  console.table(data);
+
   return (
     <>
       <div className="flex justify-center m-5 mt-40">

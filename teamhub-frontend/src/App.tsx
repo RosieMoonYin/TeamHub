@@ -5,7 +5,7 @@ import Contribute from "./pages/contribute";
 import Archive from "./pages/archive";
 import Meeting from "./pages/meeting";
 import SelectMeeting from "./pages/selectmeeting";
-import SelectMeetingLite from "./pages/selectMeetingLite";
+import SelectMeetingLite from "./pages/selectmeetingLite";
 
 function App() {
   return (

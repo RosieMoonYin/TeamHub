@@ -19,7 +19,7 @@ export default function ContributeForm() {
     mutationFn: createPost,
     onSuccess: () => {
       alert("Post created seccesfully");
-      queryClient.invalidateQueries({ queryKey: ["post"] });
+      queryClient.invalidateQueries({ queryKey: ["post", "openMeetings"] });
 
       navigate("/");
       setPersonName("");
