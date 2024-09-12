@@ -1,14 +1,6 @@
 export default function TrackerWidget() {
   return (
-    // <div className="stats shadow">
-    //   <div className="stat">
-    //     <div className="stat-title">Total Contributions this month</div>
-    //     <div className="stat-value">132</div>
-    //     <div className="stat-desc">21% more than last month</div>
-    //   </div>
-    // </div>
-
-    <div className="stats stats-vertical lg:stats-horizontal shadow">
+    <div className="stats stats-vertical lg:stats-horizontal shadow outline outline-blue-400 border-solid border-green-400 w-6/12 h-28">
       <div className="stat">
         <div className="stat-title">Time Saved (Hours)</div>
         <div className="stat-value">30</div>

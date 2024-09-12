@@ -7,14 +7,16 @@ export default function ContributeCard() {
         <img src="../src/assets/colour.jpg" alt="Title" />
       </figure>
       <div className="card-body">
-        <h2 className="card-title text-5xl text-left">Contribute to meeting</h2>
+        <h2 className="card-title text-5xl text-left">
+          Post to Upcoming Meeting board
+        </h2>
         <p className="text-left text-sm">
           Have a topic to raise? Create a contribution and make sure your voice
           is heard!
         </p>
         <div className="card-actions justify-end">
           <Link to="/selectmeeting">
-            <button className="btn btn-primary">Contribute</button>
+            <button className="btn btn-primary w-28">Contribute</button>
           </Link>
         </div>
       </div>
