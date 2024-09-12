@@ -1,4 +1,5 @@
 using teamhub_backend;
+using Microsoft.EntityFrameworkCore;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -8,8 +9,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 
 // //EF CORE DB
-// builder.Services.AddDbContext<TeamhubDbContext>(options =>
-//     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+builder.Services.AddDbContext<TeamhubDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 
 var apiKey = builder.Configuration["OpenAI:ApiKey"];
@@ -35,7 +36,7 @@ builder.Services.AddCors(options =>
 });
 
 // //EF CORE DB SEEDER
-// builder.Services.AddScoped<DbSeeder>();
+builder.Services.AddScoped<DbSeeder>();
 
 
 var app = builder.Build();
@@ -54,11 +55,11 @@ app.UseAuthorization();
 app.MapControllers();
 
 // //EF CORE DB SEEDER SEED
-// using (var scope = app.Services.CreateScope())
-// {
-//     var seeder = scope.ServiceProvider.GetRequiredService<DbSeeder>();
-//     seeder.Seed();
-//     seeder.SeedPosts();
-// }
+using (var scope = app.Services.CreateScope())
+{
+    var seeder = scope.ServiceProvider.GetRequiredService<DbSeeder>();
+    seeder.Seed();
+    // seeder.SeedPosts();
+}
 
 app.Run();

@@ -22,7 +22,6 @@ public class Post
 
     public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
 
-    [ForeignKey("MeetingId")]
     public int MeetingId { get; set; } //my foreign key
 
 }
