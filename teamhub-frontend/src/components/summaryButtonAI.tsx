@@ -29,21 +29,32 @@ export default function SummaryButtonAI() {
 
   return (
     <>
-      <section>
+      <section className="mt-20">
         <button
-          className="btn btn-primary btn-lg"
+          className="btn btn-primary hover:btn-active shadow-lg btn-lg w-52"
           onClick={handleClick}
           disabled={mutation.isPending}
         >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+            viewBox="0 0 24 24"
+            className="w-6 h-6"
+          >
+            <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+          </svg>
+
           {mutation.isPending ? "Summarizing..." : "Summarize AI"}
         </button>
         {mutation.isError && (
           <p className="text-error">Error: {mutation.error?.message}</p>
         )}
         {summary && (
-          <div className="mt-4 p-4 bg-gray-200 rounded">
-            <h3 className="text-lg font-bold">AI Summary:</h3>
-            <p>{summary}</p>
+          <div className="mt-10 bg-black rounded ms-60 me-60 p-10">
+            <h3 className="text-lg text-left text-white">Summary of points:</h3>
+            <br />
+
+            <p className="text-white text-left">{summary}</p>
           </div>
         )}
       </section>

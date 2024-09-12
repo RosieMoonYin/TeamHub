@@ -23,6 +23,19 @@ export default function SelectOpenMeeting() {
               className="card bg-secondary text-primary-content w-96 m-2 mb-4"
             >
               <div className="card-body">
+                <p className="text-left text-teal-400 text-xs">
+                  {new Date(openMeeting.meetingDate).toLocaleDateString(
+                    "en-US",
+                    {
+                      weekday: "long",
+                      // year: "numeric",
+                      month: "long",
+                      day: "numeric",
+                      hour: "2-digit",
+                      minute: "2-digit",
+                    }
+                  )}
+                </p>
                 <h2 className="card-title text-2xl">
                   {openMeeting.meetingName}
                 </h2>

@@ -51,7 +51,7 @@ export default function MeetingUpdates() {
 
   return (
     <>
-      <div className="flex flex-col">
+      <div className="flex flex-col ms-40 me-40 mb-20">
         <section className="flex flex-col align-middle justify-center m-12">
           <textarea
             className="textarea textarea-accent textarea-lg min-h-60 m-2"
@@ -83,21 +83,21 @@ export default function MeetingUpdates() {
           ></textarea>
 
           <button
-            className="btn btn-primary border-t-cyan-300 w-40 self-center m-2"
+            className="btn btn-primary w-40 self-center m-2"
             onClick={handleSave}
           >
             Save
           </button>
         </section>
 
-        <section className="flex align-middle justify-center m-5">
+        <section className="flex align-middle justify-center m-2">
           <Link to="/">
-            <button className="btn btn-m btn-secondary btn-outline w-40 m-2">
+            <button className="btn btn-l btn-secondary btn-outline w-40 m-2">
               Go Back
             </button>
           </Link>
           <button
-            className="btn btn-m btn-success w-40 m-2"
+            className="btn btn-l btn-success w-40 m-2"
             onClick={handleCloseMeeting}
             disabled={closeMeetingMutation.isPending}
           >

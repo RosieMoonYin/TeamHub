@@ -4,7 +4,10 @@ export default function Navbar() {
   return (
     <div className="navbar bg-base-100">
       <div className="flex-1">
-        <Link className="btn btn-ghost text-xl" to="/">
+        <Link
+          className="btn btn-ghost hover:bg-transparent hover:text-current text-xl"
+          to="/"
+        >
           <img src="/src/assets/logo-black.png" width={60} />
           SyncSpace
         </Link>

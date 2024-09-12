@@ -1,6 +1,6 @@
 export default function TimeLine() {
   return (
-    <ul className="steps steps-vertical m-10">
+    <ul className="steps steps-vertical mt-1 m-10">
       <li className="step step-success text-white">
         Create meeting, or choose existing
       </li>
