@@ -129,7 +129,9 @@ export const updateMeeting = async (
 };
 
 export const fetchAISummary = async (meetingId: number) => {
-  const response = await fetch(`/api/openai/meetings/${meetingId}/summary`);
+  const response = await fetch(
+    `http://localhost:5082/api/OpenAI/meetings/${meetingId}/summary`
+  );
   if (!response.ok) {
     throw new Error("Failed to fetch summary");
   }

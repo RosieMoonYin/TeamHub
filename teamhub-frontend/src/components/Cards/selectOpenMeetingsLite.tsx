@@ -43,7 +43,7 @@ export default function SelectOpenMeetingLite() {
                     <Link to="/meeting" state={{ meetingId: openMeeting.id }}>
                       <button
                         className="btn btn-info btn-s"
-                        disabled={postCount < 4}
+                        // disabled={postCount < 4}
                       >
                         Open Meeting
                       </button>
