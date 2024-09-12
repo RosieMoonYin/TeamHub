@@ -6,6 +6,9 @@ export interface Meeting {
   summary?: string;
   actionPoints?: string[];
   aiSummary?: string;
+
+  postCount: number;
+
   posts?: Post[];
 }
 

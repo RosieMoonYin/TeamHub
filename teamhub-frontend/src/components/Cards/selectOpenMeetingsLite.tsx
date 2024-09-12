@@ -20,7 +20,7 @@ export default function SelectOpenMeetingLite() {
           <p>No open meetings available.</p>
         ) : (
           data?.map((openMeeting) => {
-            const postCount = openMeeting.posts?.length ?? 0;
+            // const postCount = openMeeting.posts?.length ?? 0;
 
             return (
               <div
@@ -28,9 +28,9 @@ export default function SelectOpenMeetingLite() {
                 className="card bg-secondary text-primary-content w-96 m-2 mb-4"
               >
                 <div className="card-body">
-                  {postCount < 5 && (
+                  {openMeeting.postCount < 5 && (
                     <div className="badge badge-error text-left text-xs">
-                      Contributions: {postCount}
+                      Contributions: {openMeeting.postCount}
                     </div>
                   )}
 
