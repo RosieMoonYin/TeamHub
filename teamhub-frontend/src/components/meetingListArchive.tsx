@@ -14,7 +14,7 @@ export default function MeetingListArchive() {
     <>
       {data && data.length > 0 ? (
         data.map((meeting) => (
-          <div className="collapse collapse-arrow bg-base-200" key={meeting.id}>
+          <div className="collapse collapse-arrow bg-inherit" key={meeting.id}>
             <input
               type="radio"
               name="my-accordion"
@@ -36,10 +36,7 @@ export default function MeetingListArchive() {
               {meeting.actionPoints && meeting.actionPoints.length > 0 && (
                 <ul className="list-disc pl-5">
                   {meeting.actionPoints.map((point, index) => (
-                    <li
-                      key={index}
-                      className="text-left text-m  text-purple-500 m-4"
-                    >
+                    <li key={index} className="text-left text-m  m-4">
                       {point}
                     </li>
                   ))}

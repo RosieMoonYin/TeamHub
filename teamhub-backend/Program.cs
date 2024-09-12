@@ -7,6 +7,9 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 
+// //EF CORE DB
+// builder.Services.AddDbContext<TeamhubDbContext>(options =>
+//     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 
 var apiKey = builder.Configuration["OpenAI:ApiKey"];
@@ -31,6 +34,9 @@ builder.Services.AddCors(options =>
         });
 });
 
+// //EF CORE DB SEEDER
+// builder.Services.AddScoped<DbSeeder>();
+
 
 var app = builder.Build();
 
@@ -46,5 +52,13 @@ app.UseCors("AllowAll"); //Use CORS policy
 app.UseAuthorization();
 
 app.MapControllers();
+
+// //EF CORE DB SEEDER SEED
+// using (var scope = app.Services.CreateScope())
+// {
+//     var seeder = scope.ServiceProvider.GetRequiredService<DbSeeder>();
+//     seeder.Seed();
+//     seeder.SeedPosts();
+// }
 
 app.Run();

@@ -22,7 +22,7 @@ export default function Home() {
         </p>
       </section>
 
-      <section className="flex justify-center align-middle">
+      <section className="flex justify-center align-middle flex-wrap">
         <ContributeCard />
         <MeetingCard />
         <ArchiveCard />
