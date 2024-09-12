@@ -63,7 +63,6 @@ namespace teamhub_backend
             {
                 return NotFound();
             }
-
             MockData.Posts.Remove(post);
             return NoContent();
         }
