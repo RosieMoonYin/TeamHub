@@ -24,7 +24,7 @@ export default function Home() {
         <MeetingCard />
         <ArchiveCard />
       </section>
-      <section className="">
+      <section className="mt-20">
         <TimeLine />
         <TrackerWidget />
       </section>

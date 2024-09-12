@@ -18,14 +18,14 @@ public class MeetingController : ControllerBase
     [HttpGet]
     public ActionResult<IEnumerable<Meeting>> GetMeetings()
     {
-        return Ok(Data.Meetings);
+        return Ok(MockData.Meetings);
     }
 
     // GET: api/meetings/{id}
     [HttpGet("{id}")]
     public ActionResult<Meeting> GetMeeting(int id)
     {
-        var meeting = Data.Meetings.FirstOrDefault(m => m.Id == id);
+        var meeting = MockData.Meetings.FirstOrDefault(m => m.Id == id);
         if (meeting == null)
         {
             return NotFound();
@@ -37,14 +37,14 @@ public class MeetingController : ControllerBase
     [HttpGet("open")]
     public ActionResult<IEnumerable<Meeting>> GetOpenMeetings()
     {
-        var openMeetings = Data.Meetings.Where(m => m.Status == "Open").ToList();
+        var openMeetings = MockData.Meetings.Where(m => m.Status == "Open").ToList();
         return Ok(openMeetings);
     }
 
     [HttpGet("closed")]
     public ActionResult<IEnumerable<Meeting>> GetClosedMeetings()
     {
-        var closedMeetings = Data.Meetings.Where(m => m.Status == "Closed").ToList();
+        var closedMeetings = MockData.Meetings.Where(m => m.Status == "Closed").ToList();
         return Ok(closedMeetings);
     }
 
@@ -53,8 +53,8 @@ public class MeetingController : ControllerBase
     [HttpPost]
     public ActionResult<Meeting> PostMeeting([FromBody] Meeting meeting)
     {
-        meeting.Id = Data.Meetings.Count + 1;
-        Data.Meetings.Add(meeting);
+        meeting.Id = MockData.Meetings.Count + 1;
+        MockData.Meetings.Add(meeting);
         return CreatedAtAction(nameof(GetMeeting), new { id = meeting.Id }, meeting);
     }
 
@@ -62,13 +62,13 @@ public class MeetingController : ControllerBase
     [HttpDelete("{id}")]
     public ActionResult DeleteMeeting(int id)
     {
-        var meeting = Data.Meetings.FirstOrDefault(m => m.Id == id);
+        var meeting = MockData.Meetings.FirstOrDefault(m => m.Id == id);
         if (meeting == null)
         {
             return NotFound();
         }
 
-        Data.Meetings.Remove(meeting);
+        MockData.Meetings.Remove(meeting);
         return NoContent();
     }
 
@@ -76,7 +76,7 @@ public class MeetingController : ControllerBase
     [HttpPatch("{id}")]
     public ActionResult<Meeting> PatchMeeting(int id, [FromBody] UpdateMeetingDto updateMeetingDto)
     {
-        var meeting = Data.Meetings.FirstOrDefault(m => m.Id == id);
+        var meeting = MockData.Meetings.FirstOrDefault(m => m.Id == id);
         if (meeting == null)
         {
             return NotFound();

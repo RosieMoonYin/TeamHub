@@ -42,7 +42,7 @@ export default function SelectOpenMeetingLite() {
                   <div className="card-actions justify-end">
                     <Link to="/meeting" state={{ meetingId: openMeeting.id }}>
                       <button
-                        className="btn btn-primary btn-s"
+                        className="btn btn-info btn-s"
                         disabled={postCount < 4}
                       >
                         Open Meeting

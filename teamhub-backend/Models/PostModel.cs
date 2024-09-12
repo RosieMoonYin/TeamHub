@@ -1,7 +1,7 @@
 namespace teamhub_backend;
 public class Post
 {
-    public int Id { get; set; } 
+    public int Id { get; set; }
 
     public required string PersonName { get; set; }
 
@@ -12,9 +12,7 @@ public class Post
     public string Status { get; set; } = "Not Urgent";
 
     public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
-    
-    public int MeetingId { get; set; } //my foreign key
 
-    public Meeting? Meeting { get; set; } //testing 
+    public int MeetingId { get; set; } //my foreign key
 
 }

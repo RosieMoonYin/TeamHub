@@ -17,7 +17,7 @@ public class OpenAIController : ControllerBase
     [HttpGet("meetings/{id}/summary")]
     public async Task<ActionResult> GetMeetingSummary(int id)
     {
-        var meeting = Data.Meetings.FirstOrDefault(m => m.Id == id);
+        var meeting = MockData.Meetings.FirstOrDefault(m => m.Id == id);
         if (meeting == null || meeting.Posts == null || meeting.Posts.Count == 0)
         {
             return NotFound("No posts found for the specified meeting.");

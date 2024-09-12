@@ -9,14 +9,14 @@ namespace teamhub_backend
         [HttpGet]
         public ActionResult<IEnumerable<Post>> GetAllPosts()
         {
-            return Ok(Data.Posts);
+            return Ok(MockData.Posts);
         }
 
         // GET: api/posts/{id}
         [HttpGet("{id}")]
         public ActionResult<Post> GetPost(int id)
         {
-            var post = Data.Posts.FirstOrDefault(p => p.Id == id);
+            var post = MockData.Posts.FirstOrDefault(p => p.Id == id);
             if (post == null)
             {
                 return NotFound();
@@ -27,26 +27,29 @@ namespace teamhub_backend
         [HttpGet("MeetingId")]
         public ActionResult<IEnumerable<Post>> GetPostsByMeetingId([FromQuery] int meetingId)
         {
-            var posts = Data.Posts.Where(p => p.MeetingId == meetingId).ToList();
-            if (posts == null || !posts.Any())
+            var meeting = MockData.Meetings.FirstOrDefault(m => m.Id == meetingId);
+            if (meeting == null)
             {
-                return NotFound("No posts found for the specified meeting ID");
+                return NotFound("Meeting not found");
             }
+
+            var posts = MockData.Posts.Where(p => p.MeetingId == meetingId).ToList();
             return Ok(posts);
         }
+
 
         // POST: api/posts
         [HttpPost]
         public ActionResult<Post> CreatePost(Post post)
         {
-            var meeting = Data.Meetings.FirstOrDefault(m => m.Id == post.MeetingId);
+            var meeting = MockData.Meetings.FirstOrDefault(m => m.Id == post.MeetingId);
             if (meeting == null)
             {
                 return BadRequest("Meeting not found");
             }
 
-            post.Id = Data.Posts.Count + 1;
-            Data.Posts.Add(post);
+            post.Id = MockData.Posts.Count + 1;
+            MockData.Posts.Add(post);
 
             return CreatedAtAction(nameof(GetPost), new { id = post.Id }, post);
         }
@@ -55,13 +58,13 @@ namespace teamhub_backend
         [HttpDelete("{id}")]
         public ActionResult DeletePost(int id)
         {
-            var post = Data.Posts.FirstOrDefault(p => p.Id == id);
+            var post = MockData.Posts.FirstOrDefault(p => p.Id == id);
             if (post == null)
             {
                 return NotFound();
             }
 
-            Data.Posts.Remove(post);
+            MockData.Posts.Remove(post);
             return NoContent();
         }
     }

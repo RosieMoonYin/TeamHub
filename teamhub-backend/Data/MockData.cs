@@ -1,6 +1,6 @@
 namespace teamhub_backend;
 
-public static class Data
+public static class MockData
 {
     public static List<Meeting> Meetings { get; set; } = new List<Meeting>
     {
@@ -248,7 +248,7 @@ public static class Data
         }
     },
 
-    
+
     };
 
     public static List<Post> Posts { get; set; } = new List<Post>

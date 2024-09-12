@@ -14,7 +14,7 @@ export default function AddMeetingForm() {
     mutationFn: createMeeting,
     onSuccess: () => {
       console.log("Meeting created seccesfully");
-      queryClient.invalidateQueries({ queryKey: ["meetings"] });
+      queryClient.invalidateQueries({ queryKey: ["openMeetings", "Meetings"] });
     },
     onError: (error) => {
       console.error("Error creating meeting", error);
