@@ -5,7 +5,12 @@ const flowbite = require("flowbite-react/tailwind");
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}", flowbite.content()],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        ibmplexsans: ['"IBM Plex Sans"', "sans-serif"],
+        ibmplexserif: ['"IBM Plex Serif"', "serif"],
+      },
+    },
   },
   plugins: [daisyui, flowbite.plugin()],
   daisyui: {

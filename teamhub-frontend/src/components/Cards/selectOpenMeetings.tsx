@@ -13,7 +13,7 @@ export default function SelectOpenMeeting() {
 
   return (
     <>
-      <div className="flex justify-center m-5 mt-40">
+      <div className="flex flex-wrap justify-center m-5 mt-40">
         {data?.length === 0 ? (
           <p>No open meetings available.</p>
         ) : (

@@ -53,8 +53,9 @@ export default function SummaryButtonAI() {
           <div className="mt-10 bg-black rounded ms-60 me-60 p-10">
             <h3 className="text-lg text-left text-white">Summary of points:</h3>
             <br />
-
-            <p className="text-white text-left">{summary}</p>
+            <div className="text-white text-left mt-4 whitespace-pre-wrap">
+              {summary}
+            </div>
           </div>
         )}
       </section>

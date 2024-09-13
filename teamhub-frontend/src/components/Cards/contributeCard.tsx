@@ -8,7 +8,7 @@ export default function ContributeCard() {
       </figure>
       <div className="card-body">
         <h2 className="card-title text-5xl text-left">
-          Post to Upcoming Meeting board
+          Post to Upcoming Discussion
         </h2>
         <p className="text-left text-sm">
           Have a topic to raise? Create a contribution and make sure your voice

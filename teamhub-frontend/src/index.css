@@ -7,3 +7,10 @@
   /* margin: 0 auto; */
   text-align: center;
 }
+
+body {
+  font-family: "IBM Plex Sans", sans-serif;
+}
+/* p {
+  font-family: "IBM Plex Serif", serif;
+} */

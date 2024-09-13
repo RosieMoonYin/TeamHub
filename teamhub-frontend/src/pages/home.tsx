@@ -27,7 +27,7 @@ export default function Home() {
         <MeetingCard />
         <ArchiveCard />
       </section>
-      <section className="flex justify-center align-middle mt-20 bg-stone-900 p-20">
+      <section className="flex flex-wrap justify-center align-middle mt-20 bg-stone-900 p-20">
         <TimeLine />
         <TrackerWidget />
       </section>
