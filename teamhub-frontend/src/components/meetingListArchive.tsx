@@ -16,7 +16,7 @@ export default function MeetingListArchive() {
         {data && data.length > 0 ? (
           data.map((meeting) => (
             <div
-              className="collapse collapse-arrow bg-inherit border-2 border-cyan-300 m-1 p-2"
+              className="collapse collapse-arrow bg-inherit border-2 border-lime-200 m-1 p-2"
               key={meeting.id}
             >
               <input

@@ -6,8 +6,8 @@ const postTypeColors: Record<string, string> = {
   Critique: "bg-pink-300",
   Challenge: "bg-pink-300",
   Question: "bg-orange-300",
-  Action: "bg-lime-300",
-  Feedback: "bg-lime-300",
+  Action: "bg-lime-200",
+  Feedback: "bg-lime-200",
   Improvement: "bg-purple-300",
   Idea: "bg-blue-300",
 };

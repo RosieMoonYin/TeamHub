@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 namespace teamhub_backend;
 
 public class UpdateMeetingDto
@@ -14,69 +15,110 @@ public class UpdateMeetingDto
 [Route("api/[controller]")]
 public class MeetingController : ControllerBase
 {
+
+    private readonly TeamhubDbContext _context;
+
+    public MeetingController(TeamhubDbContext context)
+    {
+        _context = context;
+    }
+
+
     // GET: api/meetings
     [HttpGet]
-    public ActionResult<IEnumerable<Meeting>> GetMeetings()
+    public async Task<ActionResult<IEnumerable<Meeting>>> GetMeetings()
     {
-        return Ok(MockData.Meetings);
+        var meetings = await _context.Meetings.ToListAsync();
+        return Ok(meetings);
     }
 
     // GET: api/meetings/{id}
     [HttpGet("{id}")]
-    public ActionResult<Meeting> GetMeeting(int id)
+    public async Task<ActionResult<Meeting>> GetMeeting(int id)
     {
-        var meeting = MockData.Meetings.FirstOrDefault(m => m.Id == id);
+        var meeting = await _context.Meetings
+                .Include(m => m.Posts)
+                .FirstOrDefaultAsync(m => m.Id == id);
+
         if (meeting == null)
         {
             return NotFound();
         }
+
         return Ok(meeting);
     }
 
-    // GET: api/meetings/open
+
     [HttpGet("open")]
-    public ActionResult<IEnumerable<Meeting>> GetOpenMeetings()
+    public async Task<ActionResult<IEnumerable<object>>> GetOpenMeetings()
     {
-        var openMeetings = MockData.Meetings.Where(m => m.Status == "Open").ToList();
+        var openMeetings = await _context.Meetings
+            .Where(m => m.Status == "Open")
+            .Select(m => new
+            {
+                m.Id,
+                m.MeetingName,
+                m.Description,
+                m.MeetingDate,
+                m.Status,
+                PostCount = m.Posts != null ? m.Posts.Count : 0
+            })
+            .ToListAsync();
+
         return Ok(openMeetings);
     }
 
+
+
+
     [HttpGet("closed")]
-    public ActionResult<IEnumerable<Meeting>> GetClosedMeetings()
+    public async Task<ActionResult<IEnumerable<Meeting>>> GetClosedMeetings()
     {
-        var closedMeetings = MockData.Meetings.Where(m => m.Status == "Closed").ToList();
+        var closedMeetings = await _context.Meetings
+                .Where(m => m.Status == "Closed")
+                .ToListAsync();
+
         return Ok(closedMeetings);
     }
 
 
     // POST: api/meetings
     [HttpPost]
-    public ActionResult<Meeting> PostMeeting([FromBody] Meeting meeting)
+    public async Task<ActionResult<Meeting>> PostMeeting([FromBody] Meeting meeting)
     {
-        meeting.Id = MockData.Meetings.Count + 1;
-        MockData.Meetings.Add(meeting);
+        _context.Meetings.Add(meeting);
+        await _context.SaveChangesAsync();
+
         return CreatedAtAction(nameof(GetMeeting), new { id = meeting.Id }, meeting);
     }
 
+
+
     // DELETE: api/meetings/{id}
     [HttpDelete("{id}")]
-    public ActionResult DeleteMeeting(int id)
+    public async Task<ActionResult> DeleteMeeting(int id)
     {
-        var meeting = MockData.Meetings.FirstOrDefault(m => m.Id == id);
+
+        var meeting = await _context.Meetings.FindAsync(id);
         if (meeting == null)
         {
             return NotFound();
         }
 
-        MockData.Meetings.Remove(meeting);
+        _context.Meetings.Remove(meeting);
+        await _context.SaveChangesAsync();
+
         return NoContent();
+
     }
+
 
     // PATCH: api/meetings/{id}
     [HttpPatch("{id}")]
-    public ActionResult<Meeting> PatchMeeting(int id, [FromBody] UpdateMeetingDto updateMeetingDto)
+    public async Task<ActionResult<Meeting>> PatchMeeting(int id, [FromBody] UpdateMeetingDto updateMeetingDto)
     {
-        var meeting = MockData.Meetings.FirstOrDefault(m => m.Id == id);
+
+        var meeting = await _context.Meetings.FindAsync(id);
         if (meeting == null)
         {
             return NotFound();
@@ -101,6 +143,8 @@ public class MeetingController : ControllerBase
             meeting.Status = updateMeetingDto.Status;
         }
 
+        _context.Entry(meeting).State = EntityState.Modified;
+        await _context.SaveChangesAsync();
         return Ok(meeting);
     }
 

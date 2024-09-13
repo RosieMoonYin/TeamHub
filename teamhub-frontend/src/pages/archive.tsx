@@ -22,11 +22,11 @@ export default function Archive() {
       </section>
       <section className="flex flex-col align-middle justify-center m-20">
         <MeetingListArchive />
-        <section className="bg-cyan-200 p-5 mt-20 pb-10">
-          <h1 className="text-8xl text-left m-5 ms-20 mt-20 text-black">
+        <section className="bg-stone-900 p-5 mt-20 pb-10">
+          <h1 className="text-8xl text-left m-5 ms-20 mt-20 text-white">
             All voices heard
           </h1>
-          <p className="text text-left m-20 ms-40 me-40 text-black">
+          <p className="text text-left m-20 ms-40 me-40 text-white">
             At TeamHub, we believe in the power of inclusive dialogue to drive
             progress and unity. Our platform is dedicated to ensuring that every
             voice is heard and valued, regardless of race, gender, or

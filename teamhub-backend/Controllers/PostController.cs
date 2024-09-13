@@ -1,70 +1,89 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 namespace teamhub_backend
 {
     [ApiController]
     [Route("api/[controller]")]
     public class PostsController : ControllerBase
     {
+        private readonly TeamhubDbContext _context;
+
+        public PostsController(TeamhubDbContext context)
+        {
+            _context = context;
+        }
+
         // GET: api/posts
         [HttpGet]
-        public ActionResult<IEnumerable<Post>> GetAllPosts()
+        public async Task<ActionResult<IEnumerable<Post>>> GetAllPosts()
         {
-            return Ok(MockData.Posts);
+            var posts = await _context.Posts.ToListAsync();
+            return Ok(posts);
+
         }
 
         // GET: api/posts/{id}
         [HttpGet("{id}")]
-        public ActionResult<Post> GetPost(int id)
+        public async Task<ActionResult<Post>> GetPost(int id)
         {
-            var post = MockData.Posts.FirstOrDefault(p => p.Id == id);
+            var post = await _context.Posts.FindAsync(id);
             if (post == null)
             {
                 return NotFound();
             }
             return Ok(post);
+
         }
 
         [HttpGet("MeetingId")]
-        public ActionResult<IEnumerable<Post>> GetPostsByMeetingId([FromQuery] int meetingId)
+        public async Task<ActionResult<IEnumerable<Post>>> GetPostsByMeetingId([FromQuery] int meetingId)
         {
-            var meeting = MockData.Meetings.FirstOrDefault(m => m.Id == meetingId);
+            var meeting = await _context.Meetings.FindAsync(meetingId);
             if (meeting == null)
             {
                 return NotFound("Meeting not found");
             }
 
-            var posts = MockData.Posts.Where(p => p.MeetingId == meetingId).ToList();
+            var posts = await _context.Posts
+                .Where(p => p.MeetingId == meetingId)
+                .ToListAsync();
+
             return Ok(posts);
+
         }
+
 
 
         // POST: api/posts
         [HttpPost]
-        public ActionResult<Post> CreatePost(Post post)
+        public async Task<ActionResult<Post>> CreatePost(Post post)
         {
-            var meeting = MockData.Meetings.FirstOrDefault(m => m.Id == post.MeetingId);
+            var meeting = await _context.Meetings.FindAsync(post.MeetingId);
             if (meeting == null)
             {
                 return BadRequest("Meeting not found");
             }
 
-            post.Id = MockData.Posts.Count + 1;
-            MockData.Posts.Add(post);
+            _context.Posts.Add(post);
+            await _context.SaveChangesAsync();
 
             return CreatedAtAction(nameof(GetPost), new { id = post.Id }, post);
+
         }
 
         // DELETE: api/posts/{id}
         [HttpDelete("{id}")]
-        public ActionResult DeletePost(int id)
+        public async Task<ActionResult> DeletePost(int id)
         {
-            var post = MockData.Posts.FirstOrDefault(p => p.Id == id);
+            var post = await _context.Posts.FindAsync(id);
             if (post == null)
             {
                 return NotFound();
             }
 
-            MockData.Posts.Remove(post);
+            _context.Posts.Remove(post);
+            await _context.SaveChangesAsync();
+
             return NoContent();
         }
     }

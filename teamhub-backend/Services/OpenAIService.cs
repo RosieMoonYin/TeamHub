@@ -19,13 +19,13 @@ public class OpenAIService
 
     public async Task<string> GenerateSummaryAsync(IEnumerable<string> posts)
     {
-        var prompt = $"Summarize the following posts:\n{string.Join("\n", posts)}";
+        var prompt = $"Imagine you are a manager focused on effectivity. We are about to do a meeting, please provide a clear and concise summary of the following meeting topics so we know what to focus on in the meeting. keep it concise with 2-3 bullet points:\n{string.Join("\n", posts)}";
 
         var result = await _api.Completions.CreateCompletionAsync(new CompletionRequest
         {
             Prompt = prompt,
-            MaxTokens = 150, // Adjust as needed
-            Temperature = 0.7 // Adjust as needed
+            MaxTokens = 150,
+            Temperature = 0.5
         });
 
         return result?.Completions.FirstOrDefault()?.Text?.Trim() ?? "No summary available";

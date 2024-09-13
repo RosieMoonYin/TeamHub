@@ -7,8 +7,8 @@ const postTypeColors: Record<string, string> = {
   Critique: "bg-pink-300",
   Challenge: "bg-pink-300",
   Question: "bg-orange-300",
-  Action: "bg-lime-300",
-  Feedback: "bg-lime-300",
+  Action: "bg-lime-200",
+  Feedback: "bg-lime-200",
   Improvement: "bg-purple-300",
   Idea: "bg-blue-300",
 };
@@ -56,7 +56,7 @@ export default function PostsForMeeting() {
                   </div>
                 )}
                 <h2 className="card-title">{post.personName}</h2>
-                <p>{post.textInput}</p>
+                <p className="text-left">{post.textInput}</p>
                 <div className="card-actions justify-end">
                   <button
                     className="btn btn-xs"
