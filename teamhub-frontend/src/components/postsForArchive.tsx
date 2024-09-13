@@ -3,9 +3,13 @@ import { fetchPosts, Post } from "./api";
 import { PostsForArchiveProps } from "./searchArchivePosts";
 
 const postTypeColors: Record<string, string> = {
-  Critique: "bg-red-100",
-  Improvement: "bg-yellow-100",
-  Feedback: "bg-green-100",
+  Critique: "bg-pink-300",
+  Challenge: "bg-pink-300",
+  Question: "bg-orange-300",
+  Action: "bg-lime-300",
+  Feedback: "bg-lime-300",
+  Improvement: "bg-purple-300",
+  Idea: "bg-blue-300",
 };
 
 export default function PostsForArchive({ searchTerm }: PostsForArchiveProps) {
@@ -53,11 +57,7 @@ export default function PostsForArchive({ searchTerm }: PostsForArchiveProps) {
                 )}
               </div>
               <h2 className="card-title">{post.personName}</h2>
-
               <p className="text-left text-xs">{post.textInput}</p>
-              {/* <div className="card-actions justify-end">
-                <button className="btn btn-xs">Archive</button>
-              </div> */}
             </div>
           </div>
         );

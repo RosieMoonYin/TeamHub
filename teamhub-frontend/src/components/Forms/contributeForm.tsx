@@ -60,9 +60,10 @@ export default function ContributeForm() {
               onChange={(e) => setPostType(e.target.value)}
             >
               {<option>Choose a category</option>}
-              <option value="Concern">Concern</option>
+              <option value="Issue">Challenge</option>
               <option value="Question">Question</option>
-              <option value="Suggestion">Suggestion</option>
+              <option value="Suggestion">Action</option>
+              <option value="Suggestion">Idea</option>
             </select>
 
             <textarea
