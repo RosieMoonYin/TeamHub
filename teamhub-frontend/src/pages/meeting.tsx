@@ -3,6 +3,8 @@ import Footer from "../components/footer";
 import PostsForMeeting from "../components/postsForMeeting";
 import MeetingUpdates from "../components/meetingUpdates";
 import SummaryButtonAI from "../components/summaryButtonAI";
+import TimeLine from "../components/timeLine";
+import TrackerWidget from "../components/trackerWidget";
 
 export default function Meeting() {
   return (
@@ -31,6 +33,11 @@ export default function Meeting() {
           <MeetingUpdates />
         </section>
       </div>
+
+      <section className="flex flex-wrap justify-center align-middle mt-20 bg-stone-900 p-20">
+        <TimeLine />
+        <TrackerWidget />
+      </section>
       <Footer />
     </>
   );

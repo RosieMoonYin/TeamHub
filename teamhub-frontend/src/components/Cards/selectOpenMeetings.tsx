@@ -13,14 +13,14 @@ export default function SelectOpenMeeting() {
 
   return (
     <>
-      <div className="flex flex-wrap justify-center m-5 mt-40">
+      <div className="flex flex-wrap justify-center m-5 mt-20">
         {data?.length === 0 ? (
           <p>No open meetings available.</p>
         ) : (
           data?.map((openMeeting) => (
             <div
               key={openMeeting.id}
-              className="card bg-secondary text-primary-content w-96 m-2 mb-4"
+              className="card bg-secondary text-primary-content w-96 m-2 mb-4 transition-transform duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg"
             >
               <div className="card-body">
                 <h2 className="card-title text-2xl mb-2">

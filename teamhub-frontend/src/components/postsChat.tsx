@@ -25,8 +25,12 @@ export default function PostsChat() {
                 />
               </div>
             </div> */}
-            <div className="chat-bubble chat-bubble-accent m-2 p-6 text-left">
-              {post.textInput}
+            <div className="chat-bubble chat-bubble-accent bg-purple-300 m-2 p-6 text-left">
+              <p className="text-black m-1">{post.textInput}</p>
+              <p className="badge badge-primary text-right m-1">
+                {post.postType}
+              </p>
+              <p className="badge badge-outline m-1">{post.status}</p>
             </div>
           </div>
         ))}

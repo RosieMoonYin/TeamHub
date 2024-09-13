@@ -39,11 +39,7 @@ export default function ContributeForm() {
 
   return (
     <>
-      <div className="flex justify-around flex-wrap w-full mt-20 pt-10 pb-20">
-        <section className="flex flex-col align-middle  justify-center min-w-96 p-10 m-5">
-          <PostsChat />
-        </section>
-
+      <div className="flex justify-around flex-wrap w-full mt-10 pt-10 pb-10">
         <section className="flex flex-col p-10 m-5 min-w-96">
           <form onSubmit={handleSubmit}>
             <input
@@ -93,7 +89,7 @@ export default function ContributeForm() {
               </Link>
               <button
                 type="submit"
-                className="btn btn-success btn-m align-middle w-40 m-2"
+                className="btn btn-info btn-m align-middle w-40 m-2"
               >
                 {mutation.isPending ? "Creating..." : "Create"}
               </button>
@@ -111,6 +107,9 @@ export default function ContributeForm() {
               )}
             </div>
           </form>
+        </section>
+        <section className="flex flex-col align-middle  justify-center min-w-96 p-10 m-5">
+          <PostsChat />
         </section>
       </div>
     </>

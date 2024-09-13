@@ -28,7 +28,7 @@ export default function AddMeetingForm() {
 
   return (
     <>
-      <div className="flex flex-center justify-center mt-40">
+      <div className="flex flex-center justify-center mt-20">
         <form
           onSubmit={handleSubmit}
           className="flex flex-col align-middle justify-center  max-w-96"
@@ -69,7 +69,7 @@ export default function AddMeetingForm() {
 
             <button
               type="submit"
-              className="btn btn-success w-40 m-2"
+              className="btn btn-info w-40 m-2"
               disabled={mutation.isPending}
             >
               {mutation.isPending ? "Creating..." : "Create"}

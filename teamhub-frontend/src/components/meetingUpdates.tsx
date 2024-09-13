@@ -61,7 +61,7 @@ export default function MeetingUpdates() {
           ></textarea>
 
           <textarea
-            className="textarea textarea-success textarea-lg min-h-20 m-2"
+            className="textarea textarea-info textarea-lg min-h-20 m-2"
             placeholder="Add first action point"
             value={actionPoints[0]}
             onChange={(e) => {
@@ -72,7 +72,7 @@ export default function MeetingUpdates() {
           ></textarea>
 
           <textarea
-            className="textarea textarea-success textarea-lg min-h-20 m-2"
+            className="textarea textarea-info textarea-lg min-h-20 m-2"
             placeholder="Add another action point"
             value={actionPoints[1]}
             onChange={(e) => {
@@ -97,7 +97,7 @@ export default function MeetingUpdates() {
             </button>
           </Link>
           <button
-            className="btn btn-l btn-success w-40 m-2"
+            className="btn btn-l btn-info w-40 m-2"
             onClick={handleCloseMeeting}
             disabled={closeMeetingMutation.isPending}
           >

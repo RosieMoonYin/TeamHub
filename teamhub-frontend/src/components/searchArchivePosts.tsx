@@ -10,15 +10,19 @@ export default function SearchArchivePosts() {
 
   return (
     <>
-      <div>
-        <input
-          type="search"
-          className="input input-accent input-lg text-sm min-w-40 m-10"
-          placeholder="Search posts"
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-        />
-        <PostsForArchive searchTerm={searchTerm} />
+      <div className="">
+        <div className="">
+          <input
+            type="search"
+            className="input input-accent input-lg text-sm min-w-40 m-10 mt-20"
+            placeholder="Search posts"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
+        </div>
+        <div>
+          <PostsForArchive searchTerm={searchTerm} />
+        </div>
       </div>
     </>
   );
