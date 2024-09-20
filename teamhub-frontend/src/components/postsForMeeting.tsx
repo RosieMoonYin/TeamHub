@@ -46,7 +46,7 @@ export default function PostsForMeeting() {
         ?.filter((post) => !hiddenPosts.includes(post.id))
         .map((post) => {
           const cardColor =
-            postTypeColors[post.postType ?? ""] || "bg-base-100";
+            postTypeColors[post.postType ?? ""] || "bg-purple-300";
 
           return (
             <div key={post.id} className={`card ${cardColor} w-96 shadow-xl`}>

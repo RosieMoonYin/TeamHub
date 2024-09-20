@@ -42,7 +42,8 @@ export default function PostsForArchive({ searchTerm }: PostsForArchiveProps) {
   return (
     <div className="flex flex-wrap justify-center m-10 gap-2">
       {filteredPosts?.map((post) => {
-        const cardColor = postTypeColors[post.postType ?? ""] || "bg-base-100";
+        const cardColor =
+          postTypeColors[post.postType ?? ""] || "bg-purple-300";
         return (
           <div key={post.id} className={`card ${cardColor} w-96 shadow-xl`}>
             <div className="card-body">

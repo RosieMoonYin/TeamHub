@@ -61,8 +61,7 @@ export default function MeetingListArchive() {
                     ))}
                   </ul>
                 )}
-
-                <p className="text-left">{meeting.aiSummary}</p>
+                {/* <p className="text-left">{meeting.aiSummary}</p> */}
               </div>
             </div>
           ))
