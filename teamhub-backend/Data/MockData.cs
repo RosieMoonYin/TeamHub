@@ -4,30 +4,6 @@ public static class MockData
 {
     public static List<Meeting> Meetings { get; set; } = new List<Meeting>
     {
-        // new Meeting
-        // {
-        //     Id = 1,
-        //     MeetingName = "Bieniale Art Fair Planning",
-        //     Description = "Discussion on upcoming art exhibitions, including artist selections, installation schedules, and marketing strategies.",
-        //     MeetingDate = new DateTime(2024, 9, 15, 10, 0, 0, DateTimeKind.Utc)
-        // },
-        // new Meeting
-        // {
-        //     Id = 2,
-        //     MeetingName = "Gallery Staff Review",
-        //     Description = "Review of staff performance and discussion on internal processes and improvements.",
-        //     MeetingDate = new DateTime(2024, 9, 15, 14, 0, 0, DateTimeKind.Utc)
-        // },
-        // new Meeting
-        // {
-        //     Id = 3,
-        //     MeetingName = "Visitor Experience Feedback",
-        //     Description = "Gather feedback from visitors on their gallery experience to improve services and exhibitions.",
-        //     MeetingDate = new DateTime(2024, 9, 16, 11, 0, 0, DateTimeKind.Utc)
-        // },
-
-
-
         new Meeting
         {
             Id = 1,

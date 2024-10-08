@@ -28,7 +28,6 @@ export default function MeetingListArchive() {
                 <p className="text-right text-stone-600 text-xs m-1">
                   {new Date(meeting.meetingDate).toLocaleDateString("en-US", {
                     weekday: "long",
-                    // year: "numeric",
                     month: "long",
                     day: "numeric",
                     hour: "2-digit",
@@ -61,7 +60,6 @@ export default function MeetingListArchive() {
                     ))}
                   </ul>
                 )}
-                {/* <p className="text-left">{meeting.aiSummary}</p> */}
               </div>
             </div>
           ))

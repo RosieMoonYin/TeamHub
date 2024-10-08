@@ -31,11 +31,12 @@ export default function PostsForArchive({ searchTerm }: PostsForArchiveProps) {
   }
 
   const filteredPosts = posts.filter((post) => {
+    const searchTermLower = searchTerm.toLowerCase();
     const body = post.textInput;
     return (
       body &&
       typeof body === "string" &&
-      body.toLowerCase().includes(searchTerm)
+      body.toLowerCase().includes(searchTermLower)
     );
   });
 

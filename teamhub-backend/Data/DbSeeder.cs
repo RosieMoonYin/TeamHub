@@ -110,7 +110,6 @@ namespace teamhub_backend
                 return;
             }
 
-            // Seed Posts
             _context.Posts.AddRange(
 
             // Posts for Meeting ID 1

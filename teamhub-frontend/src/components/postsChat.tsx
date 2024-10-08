@@ -17,14 +17,6 @@ export default function PostsChat() {
       <div>
         {lastFivePosts?.map((post) => (
           <div className="chat chat-start gap-10" key={post.id}>
-            {/* <div className="chat-image avatar">
-              <div className="w-10 rounded-full">
-                <img
-                  alt="Avatar"
-                  src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
-                />
-              </div>
-            </div> */}
             <div className="chat-bubble chat-bubble-accent bg-purple-300 m-2 p-6 text-left">
               <p className="text-black m-1">{post.textInput}</p>
               <p className="badge badge-primary text-right m-1">
